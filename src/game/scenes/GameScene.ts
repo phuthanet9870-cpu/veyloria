@@ -3,6 +3,7 @@
 import { homunStats } from '../../core/homunculus';
 import Phaser from 'phaser';
 import { paintArchitecturePart } from '../art/architectureArt';
+import { paintAurelionScenery } from '../art/aurelionArt';
 import type { World, WorldEvent, MonsterActor, AnimState } from '../../core/world';
 import { TILE } from '../../core/mapCompiler';
 import type { Direction } from '../../core/types';
@@ -234,6 +235,23 @@ export class GameScene extends Phaser.Scene {
       const img = this.add.image(b.x * TILE - 4, (b.y + b.h) * TILE + 4, tex.buildings[i]).setOrigin(0, 1).setDepth((b.y + b.h) * TILE - 2);
       this.track(img);
     });
+
+    for(const part of map.def.scenery??[]) {
+      const width=Math.round(part.w*TILE),height=Math.round(part.h*TILE);
+      const key=`scenery_${map.def.id}_${part.kind}_${width}_${height}`;
+      if(!this.textures.exists(key)) {
+        const canvas=part.kind==='city_wall'||part.kind==='city_gate'
+          ?paintArchitecturePart('capital',part.kind==='city_wall'?'wall':'gate',width,height,part.opening==null?undefined:Math.round(part.opening*TILE))
+          :paintAurelionScenery(part.kind,width,height);
+        if(!canvas)throw new Error(`Missing city scenery: ${part.kind}`);
+        this.textures.addCanvas(key,canvas);
+      }
+      this.track(this.add.image(part.x*TILE-4,part.y*TILE+4,key).setOrigin(0,1).setDepth(part.depth??part.y*TILE-1));
+    }
+    for(const area of map.def.areas)if(area.label){
+      const label=this.add.text(area.label.x*TILE,area.label.y*TILE,area.name,{fontFamily:'Trebuchet MS, sans-serif',fontSize:'24px',fontStyle:'bold',color:'#f4e5bd',backgroundColor:'#1c211b',padding:{x:10,y:5}}).setOrigin(0.5).setDepth(10001);
+      this.track(this.add.rectangle(label.x,label.y,label.width+4,label.height+4,0xb39955).setDepth(10000));this.track(label);
+    }
 
     if (map.def.id === 'castle_veyl') {
       // Art is anchored on the existing blocked wall cells. The four-cell

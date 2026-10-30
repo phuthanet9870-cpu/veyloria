@@ -1,3 +1,24 @@
+# รุ่นล่าสุด: Royal Capital Aurelion ตามภาพ Concept
+
+- [ดาวน์โหลดเกม](https://github.com/phuthanet9870-cpu/veyloria/raw/refs/heads/downloads/map-art-2026-10-30/downloads/Veyloria-Aurelion-Concept.zip)
+- [ภาพผังเมืองจากเกมจริง](https://github.com/phuthanet9870-cpu/veyloria/raw/refs/heads/downloads/map-art-2026-10-30/downloads/Aurelion-Concept-Preview.png)
+- [Object ปราสาทใหญ่ PNG](https://github.com/phuthanet9870-cpu/veyloria/raw/refs/heads/downloads/map-art-2026-10-30/downloads/Aurelion-Palace.png)
+- [ชุด Object เมืองและปราสาท](https://github.com/phuthanet9870-cpu/veyloria/raw/refs/heads/downloads/map-art-2026-10-30/downloads/Veyloria-Aurelion-Objects.zip)
+- [ภาพแต่ละย่านและผลตรวจ](https://github.com/phuthanet9870-cpu/veyloria/raw/refs/heads/downloads/map-art-2026-10-30/downloads/Veyloria-Aurelion-QA.zip)
+- [ซอร์สล่าสุด](https://github.com/phuthanet9870-cpu/veyloria/raw/refs/heads/downloads/map-art-2026-10-30/downloads/Veyloria-Source-Updated.zip)
+
+แตก ZIP ใหม่แล้วเปิด index.html กด Enter พิมพ์ `@warp aurelion` เพื่อไปดูเมืองทันที
+
+เมืองสัดส่วน 3:2 ขนาด 120x80 tiles มีปราสาทใหญ่เหนือเมือง จัตุรัส/คลอง/สะพาน
+ตลาดและท่าเรือตะวันตก ย่านกิลด์และโบสถ์ตะวันออก ฟาร์มตะวันออกเฉียงเหนือ และลานฝึกฝนตะวันออกเฉียงใต้
+คงมุมอาคารหน้าตรง 45° พร้อม NPC บริการเดิม 17 คนและทางออกแมพเดิมทั้งสี่
+
+ตรวจเส้นทางเข้าอาคาร รากฐานวัตถุ การรองรับลังบนท่าเรือ และการเชื่อมสะพานแล้ว
+ผล full unit/integration 1,063 ข้อผ่าน; ตรวจเฉพาะส่วนที่เปลี่ยนครั้งท้าย 834 ข้อผ่าน;
+เกม browser 39/39; NPC dialogues 17/17; รอยต่อแมพทั้งหมดผ่าน
+
+---
+
 # รุ่นล่าสุด: บ้าน เมือง ร้านค้า และปราสาท มุมหน้าตรง 45°
 
 - [ดาวน์โหลดเกม](https://github.com/phuthanet9870-cpu/veyloria/raw/refs/heads/downloads/map-art-2026-10-30/downloads/Veyloria-Architecture-45deg.zip)

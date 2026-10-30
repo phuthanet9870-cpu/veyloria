@@ -313,7 +313,7 @@ export class Hud {
       const i = y * map.width + x;
       const g = map.ground[i];
       // Colours come from the map's tileset palette so every region reads differently.
-      let col = g === 'water' ? pal.water1 : g === 'dirt' || g === 'soil' ? pal.dirt2 : g === 'path_stone' ? pal.stone2 : g === 'ruin_floor' ? (pal.ruin2 ?? pal.stone2) : g === 'sand' ? pal.sand1 : pal.grass3;
+      let col = g === 'water' ? pal.water1 : g === 'wood_plank' ? pal.trunk : g === 'dirt' || g === 'soil' ? pal.dirt2 : g === 'path_stone' ? pal.stone2 : g === 'ruin_floor' ? (pal.ruin2 ?? pal.stone2) : g === 'sand' ? pal.sand1 : pal.grass3;
       if (map.collision[i]) col = map.wall[i] === 'thicket' ? pal.thicket2 : map.wall[i] === 'ruin_wall' ? (pal.thicket1 ?? '#4a3a2a') : '#4a3a2a';
       ctx.fillStyle = col;
       ctx.fillRect(x * 3, y * 3, 3, 3);

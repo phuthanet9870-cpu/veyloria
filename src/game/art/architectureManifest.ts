@@ -3,6 +3,12 @@
 export const ARCHITECTURE_CAMERA = Object.freeze({ facing: 'south', elevationDegrees: 45, rotation: 0, flipX: false, flipY: false });
 export const ARCHITECTURE_THEMES = ['willowbrook', 'capital', 'fernwood', 'arcane', 'desert', 'coast', 'snow'] as const;
 export const ARCHITECTURE_STYLES = ['house', 'inn', 'shop', 'smithy', 'guild'] as const;
+export const ARCHITECTURE_ALIASES:Record<string,{theme:string;style:string}>={
+  aurelion_residence:{theme:'willowbrook',style:'house'},
+  knight_guild:{theme:'capital',style:'guild'},ranger_guild:{theme:'fernwood',style:'guild'},
+  mage_guild:{theme:'arcane',style:'guild'},merchant_guild:{theme:'willowbrook',style:'guild'},
+};
+export const EXTRA_ARCHITECTURE_STYLES=['aurelion_palace','aurelion_cathedral','aurelion_stall_red','aurelion_stall_gold','aurelion_stall_blue','aurelion_farmhouse',...Object.keys(ARCHITECTURE_ALIASES)];
 export type ArchitecturePart = 'castle' | 'gate' | 'wall';
 export function architectureTheme(theme: string): number {
   if (theme === 'snow' || theme === 'dg_ice') return 6;

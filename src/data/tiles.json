@@ -1,31 +1,149 @@
 {
   "$comment": "Tile catalog. 'draw' selects the procedural painter (src/game/art/tilePainter.ts); colors come from the map tileset palette. Replaceable by real tileset art via the asset manifest.",
   "tiles": [
-    { "id": "grass", "layer": "ground", "walkable": true, "draw": "grass" },
-    { "id": "grass_dark", "layer": "ground", "walkable": true, "draw": "grass_dark" },
-    { "id": "forest_floor", "layer": "ground", "walkable": true, "draw": "forest_floor" },
-    { "id": "dirt", "layer": "ground", "walkable": true, "draw": "dirt" },
-    { "id": "soil", "layer": "ground", "walkable": true, "draw": "soil" },
-    { "id": "path_stone", "layer": "ground", "walkable": true, "draw": "stone" },
-    { "id": "ruin_floor", "layer": "ground", "walkable": true, "draw": "ruin_floor" },
-    { "id": "sand", "layer": "ground", "walkable": true, "draw": "sand" },
-    { "id": "water", "layer": "ground", "walkable": false, "draw": "water" },
-    { "id": "thorn_ground", "layer": "ground", "walkable": true, "draw": "thorn_ground" },
-
-    { "id": "flowers", "layer": "deco", "walkable": true, "draw": "flowers" },
-    { "id": "tuft", "layer": "deco", "walkable": true, "draw": "tuft" },
-    { "id": "pebbles", "layer": "deco", "walkable": true, "draw": "pebbles" },
-    { "id": "leaves", "layer": "deco", "walkable": true, "draw": "leaves" },
-    { "id": "small_mushrooms", "layer": "deco", "walkable": true, "draw": "small_mushrooms" },
-    { "id": "bramble", "layer": "deco", "walkable": true, "draw": "bramble" },
-    { "id": "crops", "layer": "deco", "walkable": true, "draw": "crops" },
-
-    { "id": "thicket", "layer": "wall", "walkable": false, "draw": "thicket" },
-    { "id": "fence_h", "layer": "wall", "walkable": false, "draw": "fence_h" },
-    { "id": "fence_v", "layer": "wall", "walkable": false, "draw": "fence_v" },
-    { "id": "hedge", "layer": "wall", "walkable": false, "draw": "hedge" },
-    { "id": "ruin_wall", "layer": "wall", "walkable": false, "draw": "ruin_wall" },
-
-    { "id": "canopy_overhang", "layer": "above", "walkable": true, "draw": "canopy_overhang" }
+    {
+      "id": "grass",
+      "layer": "ground",
+      "walkable": true,
+      "draw": "grass"
+    },
+    {
+      "id": "grass_dark",
+      "layer": "ground",
+      "walkable": true,
+      "draw": "grass_dark"
+    },
+    {
+      "id": "forest_floor",
+      "layer": "ground",
+      "walkable": true,
+      "draw": "forest_floor"
+    },
+    {
+      "id": "dirt",
+      "layer": "ground",
+      "walkable": true,
+      "draw": "dirt"
+    },
+    {
+      "id": "soil",
+      "layer": "ground",
+      "walkable": true,
+      "draw": "soil"
+    },
+    {
+      "id": "path_stone",
+      "layer": "ground",
+      "walkable": true,
+      "draw": "stone"
+    },
+    {
+      "id": "ruin_floor",
+      "layer": "ground",
+      "walkable": true,
+      "draw": "ruin_floor"
+    },
+    {
+      "id": "sand",
+      "layer": "ground",
+      "walkable": true,
+      "draw": "sand"
+    },
+    {
+      "id": "water",
+      "layer": "ground",
+      "walkable": false,
+      "draw": "water"
+    },
+    {
+      "id": "thorn_ground",
+      "layer": "ground",
+      "walkable": true,
+      "draw": "thorn_ground"
+    },
+    {
+      "id": "flowers",
+      "layer": "deco",
+      "walkable": true,
+      "draw": "flowers"
+    },
+    {
+      "id": "tuft",
+      "layer": "deco",
+      "walkable": true,
+      "draw": "tuft"
+    },
+    {
+      "id": "pebbles",
+      "layer": "deco",
+      "walkable": true,
+      "draw": "pebbles"
+    },
+    {
+      "id": "leaves",
+      "layer": "deco",
+      "walkable": true,
+      "draw": "leaves"
+    },
+    {
+      "id": "small_mushrooms",
+      "layer": "deco",
+      "walkable": true,
+      "draw": "small_mushrooms"
+    },
+    {
+      "id": "bramble",
+      "layer": "deco",
+      "walkable": true,
+      "draw": "bramble"
+    },
+    {
+      "id": "crops",
+      "layer": "deco",
+      "walkable": true,
+      "draw": "crops"
+    },
+    {
+      "id": "thicket",
+      "layer": "wall",
+      "walkable": false,
+      "draw": "thicket"
+    },
+    {
+      "id": "fence_h",
+      "layer": "wall",
+      "walkable": false,
+      "draw": "fence_h"
+    },
+    {
+      "id": "fence_v",
+      "layer": "wall",
+      "walkable": false,
+      "draw": "fence_v"
+    },
+    {
+      "id": "hedge",
+      "layer": "wall",
+      "walkable": false,
+      "draw": "hedge"
+    },
+    {
+      "id": "ruin_wall",
+      "layer": "wall",
+      "walkable": false,
+      "draw": "ruin_wall"
+    },
+    {
+      "id": "canopy_overhang",
+      "layer": "above",
+      "walkable": true,
+      "draw": "canopy_overhang"
+    },
+    {
+      "id": "wood_plank",
+      "layer": "ground",
+      "walkable": true,
+      "draw": "wood_plank"
+    }
   ]
 }

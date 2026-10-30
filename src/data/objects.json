@@ -1,26 +1,365 @@
 [
-  { "id": "tree_oak", "footprint": { "w": 1, "h": 1 }, "blocks": true, "draw": "tree_oak", "spriteW": 72, "spriteH": 96 },
-  { "id": "tree_pine", "footprint": { "w": 1, "h": 1 }, "blocks": true, "draw": "tree_pine", "spriteW": 56, "spriteH": 100 },
-  { "id": "tree_dark", "footprint": { "w": 1, "h": 1 }, "blocks": true, "draw": "tree_dark", "spriteW": 80, "spriteH": 104 },
-  { "id": "bush", "footprint": { "w": 1, "h": 1 }, "blocks": true, "draw": "bush", "spriteW": 36, "spriteH": 30 },
-  { "id": "rock", "footprint": { "w": 1, "h": 1 }, "blocks": true, "draw": "rock", "spriteW": 32, "spriteH": 26 },
-  { "id": "rock_big", "footprint": { "w": 2, "h": 1 }, "blocks": true, "draw": "rock_big", "spriteW": 64, "spriteH": 48 },
-  { "id": "stump", "footprint": { "w": 1, "h": 1 }, "blocks": true, "draw": "stump", "spriteW": 32, "spriteH": 26 },
-  { "id": "crate", "footprint": { "w": 1, "h": 1 }, "blocks": true, "draw": "crate", "spriteW": 30, "spriteH": 32 },
-  { "id": "barrel", "footprint": { "w": 1, "h": 1 }, "blocks": true, "draw": "barrel", "spriteW": 26, "spriteH": 32 },
-  { "id": "well", "footprint": { "w": 2, "h": 2 }, "blocks": true, "draw": "well", "spriteW": 64, "spriteH": 80 },
-  { "id": "fountain", "footprint": { "w": 3, "h": 2 }, "blocks": true, "draw": "fountain", "spriteW": 96, "spriteH": 84 },
-  { "id": "signpost", "footprint": { "w": 1, "h": 1 }, "blocks": true, "draw": "signpost", "spriteW": 32, "spriteH": 44 },
-  { "id": "anvil", "footprint": { "w": 1, "h": 1 }, "blocks": true, "draw": "anvil", "spriteW": 32, "spriteH": 26 },
-  { "id": "tent", "footprint": { "w": 3, "h": 2 }, "blocks": true, "draw": "tent", "spriteW": 96, "spriteH": 80 },
-  { "id": "goblin_tent", "footprint": { "w": 3, "h": 2 }, "blocks": true, "draw": "goblin_tent", "spriteW": 96, "spriteH": 80 },
-  { "id": "lamp_post", "footprint": { "w": 1, "h": 1 }, "blocks": true, "draw": "lamp_post", "spriteW": 24, "spriteH": 72 },
-  { "id": "campfire", "footprint": { "w": 1, "h": 1 }, "blocks": true, "draw": "campfire", "spriteW": 32, "spriteH": 32 },
-  { "id": "haystack", "footprint": { "w": 1, "h": 1 }, "blocks": true, "draw": "haystack", "spriteW": 36, "spriteH": 34 },
-  { "id": "ruin_pillar", "footprint": { "w": 1, "h": 1 }, "blocks": true, "draw": "ruin_pillar", "spriteW": 32, "spriteH": 80 },
-  { "id": "gravestone", "footprint": { "w": 1, "h": 1 }, "blocks": true, "draw": "gravestone", "spriteW": 28, "spriteH": 34 },
-  { "id": "obelisk", "footprint": { "w": 1, "h": 1 }, "blocks": true, "draw": "obelisk", "spriteW": 36, "spriteH": 96 },
-  { "id": "thorn_throne", "footprint": { "w": 3, "h": 1 }, "blocks": true, "draw": "thorn_throne", "spriteW": 96, "spriteH": 88 },
-  { "id": "planter", "footprint": { "w": 1, "h": 1 }, "blocks": true, "draw": "planter", "spriteW": 32, "spriteH": 28 },
-  { "id": "glint", "footprint": { "w": 1, "h": 1 }, "blocks": false, "draw": "glint", "spriteW": 24, "spriteH": 24 }
+  {
+    "id": "tree_oak",
+    "footprint": {
+      "w": 1,
+      "h": 1
+    },
+    "blocks": true,
+    "draw": "tree_oak",
+    "spriteW": 72,
+    "spriteH": 96
+  },
+  {
+    "id": "tree_pine",
+    "footprint": {
+      "w": 1,
+      "h": 1
+    },
+    "blocks": true,
+    "draw": "tree_pine",
+    "spriteW": 56,
+    "spriteH": 100
+  },
+  {
+    "id": "tree_dark",
+    "footprint": {
+      "w": 1,
+      "h": 1
+    },
+    "blocks": true,
+    "draw": "tree_dark",
+    "spriteW": 80,
+    "spriteH": 104
+  },
+  {
+    "id": "bush",
+    "footprint": {
+      "w": 1,
+      "h": 1
+    },
+    "blocks": true,
+    "draw": "bush",
+    "spriteW": 36,
+    "spriteH": 30
+  },
+  {
+    "id": "rock",
+    "footprint": {
+      "w": 1,
+      "h": 1
+    },
+    "blocks": true,
+    "draw": "rock",
+    "spriteW": 32,
+    "spriteH": 26
+  },
+  {
+    "id": "rock_big",
+    "footprint": {
+      "w": 2,
+      "h": 1
+    },
+    "blocks": true,
+    "draw": "rock_big",
+    "spriteW": 64,
+    "spriteH": 48
+  },
+  {
+    "id": "stump",
+    "footprint": {
+      "w": 1,
+      "h": 1
+    },
+    "blocks": true,
+    "draw": "stump",
+    "spriteW": 32,
+    "spriteH": 26
+  },
+  {
+    "id": "crate",
+    "footprint": {
+      "w": 1,
+      "h": 1
+    },
+    "blocks": true,
+    "draw": "crate",
+    "spriteW": 30,
+    "spriteH": 32
+  },
+  {
+    "id": "barrel",
+    "footprint": {
+      "w": 1,
+      "h": 1
+    },
+    "blocks": true,
+    "draw": "barrel",
+    "spriteW": 26,
+    "spriteH": 32
+  },
+  {
+    "id": "well",
+    "footprint": {
+      "w": 2,
+      "h": 2
+    },
+    "blocks": true,
+    "draw": "well",
+    "spriteW": 64,
+    "spriteH": 80
+  },
+  {
+    "id": "fountain",
+    "footprint": {
+      "w": 3,
+      "h": 2
+    },
+    "blocks": true,
+    "draw": "fountain",
+    "spriteW": 96,
+    "spriteH": 84
+  },
+  {
+    "id": "signpost",
+    "footprint": {
+      "w": 1,
+      "h": 1
+    },
+    "blocks": true,
+    "draw": "signpost",
+    "spriteW": 32,
+    "spriteH": 44
+  },
+  {
+    "id": "anvil",
+    "footprint": {
+      "w": 1,
+      "h": 1
+    },
+    "blocks": true,
+    "draw": "anvil",
+    "spriteW": 32,
+    "spriteH": 26
+  },
+  {
+    "id": "tent",
+    "footprint": {
+      "w": 3,
+      "h": 2
+    },
+    "blocks": true,
+    "draw": "tent",
+    "spriteW": 96,
+    "spriteH": 80
+  },
+  {
+    "id": "goblin_tent",
+    "footprint": {
+      "w": 3,
+      "h": 2
+    },
+    "blocks": true,
+    "draw": "goblin_tent",
+    "spriteW": 96,
+    "spriteH": 80
+  },
+  {
+    "id": "lamp_post",
+    "footprint": {
+      "w": 1,
+      "h": 1
+    },
+    "blocks": true,
+    "draw": "lamp_post",
+    "spriteW": 24,
+    "spriteH": 72
+  },
+  {
+    "id": "campfire",
+    "footprint": {
+      "w": 1,
+      "h": 1
+    },
+    "blocks": true,
+    "draw": "campfire",
+    "spriteW": 32,
+    "spriteH": 32
+  },
+  {
+    "id": "haystack",
+    "footprint": {
+      "w": 1,
+      "h": 1
+    },
+    "blocks": true,
+    "draw": "haystack",
+    "spriteW": 36,
+    "spriteH": 34
+  },
+  {
+    "id": "ruin_pillar",
+    "footprint": {
+      "w": 1,
+      "h": 1
+    },
+    "blocks": true,
+    "draw": "ruin_pillar",
+    "spriteW": 32,
+    "spriteH": 80
+  },
+  {
+    "id": "gravestone",
+    "footprint": {
+      "w": 1,
+      "h": 1
+    },
+    "blocks": true,
+    "draw": "gravestone",
+    "spriteW": 28,
+    "spriteH": 34
+  },
+  {
+    "id": "obelisk",
+    "footprint": {
+      "w": 1,
+      "h": 1
+    },
+    "blocks": true,
+    "draw": "obelisk",
+    "spriteW": 36,
+    "spriteH": 96
+  },
+  {
+    "id": "thorn_throne",
+    "footprint": {
+      "w": 3,
+      "h": 1
+    },
+    "blocks": true,
+    "draw": "thorn_throne",
+    "spriteW": 96,
+    "spriteH": 88
+  },
+  {
+    "id": "planter",
+    "footprint": {
+      "w": 1,
+      "h": 1
+    },
+    "blocks": true,
+    "draw": "planter",
+    "spriteW": 32,
+    "spriteH": 28
+  },
+  {
+    "id": "glint",
+    "footprint": {
+      "w": 1,
+      "h": 1
+    },
+    "blocks": false,
+    "draw": "glint",
+    "spriteW": 24,
+    "spriteH": 24
+  },
+  {
+    "id": "capital_fountain",
+    "footprint": {
+      "w": 4,
+      "h": 3
+    },
+    "blocks": true,
+    "draw": "fountain",
+    "spriteW": 176,
+    "spriteH": 160
+  },
+  {
+    "id": "capital_statue",
+    "footprint": {
+      "w": 2,
+      "h": 2
+    },
+    "blocks": true,
+    "draw": "capital_statue",
+    "spriteW": 96,
+    "spriteH": 176
+  },
+  {
+    "id": "capital_windmill",
+    "footprint": {
+      "w": 2,
+      "h": 2
+    },
+    "blocks": true,
+    "draw": "capital_windmill",
+    "spriteW": 144,
+    "spriteH": 192
+  },
+  {
+    "id": "capital_ship",
+    "footprint": {
+      "w": 3,
+      "h": 5
+    },
+    "blocks": true,
+    "draw": "capital_ship",
+    "spriteW": 144,
+    "spriteH": 240
+  },
+  {
+    "id": "capital_galleon",
+    "footprint": {
+      "w": 4,
+      "h": 6
+    },
+    "blocks": true,
+    "draw": "capital_galleon",
+    "spriteW": 192,
+    "spriteH": 304
+  },
+  {
+    "id": "capital_rowboat",
+    "footprint": {
+      "w": 2,
+      "h": 3
+    },
+    "blocks": true,
+    "draw": "capital_rowboat",
+    "spriteW": 88,
+    "spriteH": 128
+  },
+  {
+    "id": "capital_training_dummy",
+    "footprint": {
+      "w": 1,
+      "h": 1
+    },
+    "blocks": true,
+    "draw": "capital_training_dummy",
+    "spriteW": 56,
+    "spriteH": 88
+  },
+  {
+    "id": "capital_lighthouse",
+    "footprint": {
+      "w": 2,
+      "h": 2
+    },
+    "blocks": true,
+    "draw": "capital_lighthouse",
+    "spriteW": 96,
+    "spriteH": 192
+  },
+  {
+    "id": "capital_cave",
+    "footprint": {
+      "w": 4,
+      "h": 2
+    },
+    "blocks": true,
+    "draw": "capital_cave",
+    "spriteW": 176,
+    "spriteH": 160
+  }
 ]

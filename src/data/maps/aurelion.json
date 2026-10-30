@@ -3,8 +3,8 @@
  "name": "Royal Capital Aurelion",
  "region": "Aurelion — Royal Capital",
  "type": "town",
- "width": 96,
- "height": 76,
+ "width": 120,
+ "height": 80,
  "tileset": "capital",
  "base": "grass",
  "border": {
@@ -23,1090 +23,1474 @@
  },
  "paint": [
   {
-   "op": "path",
-   "tile": "path_stone",
-   "points": [
-    [
-     6,
-     4
-    ],
-    [
-     6,
-     70
-    ]
-   ],
-   "width": 2
+   "op": "rect",
+   "tile": "water",
+   "x": 0,
+   "y": 50,
+   "w": 35,
+   "h": 30,
+   "layer": "ground"
   },
   {
-   "op": "path",
-   "tile": "path_stone",
-   "points": [
-    [
-     23,
-     4
-    ],
-    [
-     23,
-     70
-    ]
-   ],
-   "width": 2
+   "op": "rect",
+   "tile": "water",
+   "x": 96,
+   "y": 59,
+   "w": 24,
+   "h": 21,
+   "layer": "ground"
   },
   {
-   "op": "path",
-   "tile": "path_stone",
-   "points": [
-    [
-     40,
-     4
-    ],
-    [
-     40,
-     70
-    ]
-   ],
-   "width": 2
+   "op": "rect",
+   "tile": "water",
+   "x": 41,
+   "y": 14,
+   "w": 4,
+   "h": 21,
+   "layer": "ground"
   },
   {
-   "op": "path",
-   "tile": "path_stone",
-   "points": [
-    [
-     57,
-     4
-    ],
-    [
-     57,
-     70
-    ]
-   ],
-   "width": 2
+   "op": "rect",
+   "tile": "water",
+   "x": 79,
+   "y": 14,
+   "w": 4,
+   "h": 21,
+   "layer": "ground"
   },
   {
-   "op": "path",
-   "tile": "path_stone",
-   "points": [
-    [
-     74,
-     4
-    ],
-    [
-     74,
-     70
-    ]
-   ],
-   "width": 2
+   "op": "rect",
+   "tile": "water",
+   "x": 41,
+   "y": 31,
+   "w": 42,
+   "h": 4,
+   "layer": "ground"
   },
   {
-   "op": "path",
-   "tile": "path_stone",
-   "points": [
-    [
-     4,
-     7
-    ],
-    [
-     90,
-     7
-    ]
-   ],
-   "width": 2
+   "op": "rect",
+   "tile": "water",
+   "x": 48,
+   "y": 35,
+   "w": 3,
+   "h": 23,
+   "layer": "ground"
   },
   {
-   "op": "path",
-   "tile": "path_stone",
-   "points": [
-    [
-     4,
-     21
-    ],
-    [
-     90,
-     21
-    ]
-   ],
-   "width": 2
+   "op": "rect",
+   "tile": "water",
+   "x": 73,
+   "y": 35,
+   "w": 3,
+   "h": 23,
+   "layer": "ground"
   },
   {
-   "op": "path",
-   "tile": "path_stone",
-   "points": [
-    [
-     4,
-     35
-    ],
-    [
-     90,
-     35
-    ]
-   ],
-   "width": 2
+   "op": "rect",
+   "tile": "water",
+   "x": 48,
+   "y": 55,
+   "w": 28,
+   "h": 4,
+   "layer": "ground"
   },
   {
-   "op": "path",
-   "tile": "path_stone",
-   "points": [
-    [
-     4,
-     49
-    ],
-    [
-     90,
-     49
-    ]
-   ],
-   "width": 2
+   "op": "rect",
+   "tile": "water",
+   "x": 25,
+   "y": 49,
+   "w": 24,
+   "h": 4,
+   "layer": "ground"
   },
   {
-   "op": "path",
-   "tile": "path_stone",
-   "points": [
-    [
-     4,
-     63
-    ],
-    [
-     90,
-     63
-    ]
-   ],
-   "width": 2
+   "op": "rect",
+   "tile": "water",
+   "x": 76,
+   "y": 44,
+   "w": 22,
+   "h": 4,
+   "layer": "ground"
   },
   {
-   "op": "path",
-   "tile": "path_stone",
-   "points": [
-    [
-     47,
-     71
-    ],
-    [
-     47,
-     71
-    ],
-    [
-     41,
-     71
-    ]
-   ],
-   "width": 3
+   "op": "rect",
+   "tile": "water",
+   "x": 94,
+   "y": 49,
+   "w": 4,
+   "h": 27,
+   "layer": "ground"
   },
   {
-   "op": "path",
-   "tile": "path_stone",
-   "points": [
-    [
-     47,
-     3
-    ],
-    [
-     47,
-     7
-    ],
-    [
-     47,
-     7
-    ]
-   ],
-   "width": 3
+   "op": "rect",
+   "tile": "water",
+   "x": 70,
+   "y": 71,
+   "w": 29,
+   "h": 5,
+   "layer": "ground"
   },
   {
-   "op": "path",
-   "tile": "path_stone",
-   "points": [
-    [
-     91,
-     37
-    ],
-    [
-     91,
-     37
-    ],
-    [
-     91,
-     36
-    ]
-   ],
-   "width": 3
+   "op": "rect",
+   "tile": "grass",
+   "x": 33,
+   "y": 53,
+   "w": 22,
+   "h": 20,
+   "layer": "ground"
   },
   {
-   "op": "path",
-   "tile": "path_stone",
-   "points": [
-    [
-     3,
-     37
-    ],
-    [
-     4,
-     37
-    ],
-    [
-     4,
-     36
-    ]
-   ],
-   "width": 3
+   "op": "rect",
+   "tile": "grass",
+   "x": 69,
+   "y": 60,
+   "w": 26,
+   "h": 11,
+   "layer": "ground"
   },
   {
-   "op": "path",
-   "tile": "path_stone",
-   "points": [
-    [
-     34,
-     34
-    ],
-    [
-     34,
-     35
-    ]
-   ],
-   "width": 1
+   "op": "rect",
+   "tile": "grass",
+   "x": 101,
+   "y": 61,
+   "w": 18,
+   "h": 17,
+   "layer": "ground"
   },
   {
-   "op": "path",
-   "tile": "path_stone",
-   "points": [
-    [
-     17,
-     48
-    ],
-    [
-     17,
-     49
-    ]
-   ],
-   "width": 1
+   "op": "rect",
+   "tile": "grass",
+   "x": 80,
+   "y": 48,
+   "w": 14,
+   "h": 13,
+   "layer": "ground"
   },
   {
-   "op": "path",
-   "tile": "path_stone",
-   "points": [
-    [
-     47,
-     34
-    ],
-    [
-     47,
-     35
-    ]
-   ],
-   "width": 1
+   "op": "rect",
+   "tile": "grass",
+   "x": 98,
+   "y": 48,
+   "w": 13,
+   "h": 12,
+   "layer": "ground"
   },
   {
-   "op": "path",
-   "tile": "path_stone",
-   "points": [
-    [
-     47,
-     45
-    ],
-    [
-     47,
-     46
-    ],
-    [
-     47,
-     47
-    ],
-    [
-     47,
-     48
-    ],
-    [
-     47,
-     49
-    ]
-   ],
-   "width": 1
+   "op": "rect",
+   "tile": "ruin_wall",
+   "x": 6,
+   "y": 6,
+   "w": 103,
+   "h": 2,
+   "layer": "wall"
   },
   {
-   "op": "path",
-   "tile": "path_stone",
-   "points": [
-    [
-     34,
-     20
-    ],
-    [
-     34,
-     21
-    ]
-   ],
-   "width": 1
+   "op": "rect",
+   "tile": "ruin_wall",
+   "x": 6,
+   "y": 6,
+   "w": 2,
+   "h": 44,
+   "layer": "wall"
   },
   {
-   "op": "path",
-   "tile": "path_stone",
-   "points": [
-    [
-     17,
-     34
-    ],
-    [
-     17,
-     35
-    ]
-   ],
-   "width": 1
+   "op": "rect",
+   "tile": "ruin_wall",
+   "x": 111,
+   "y": 8,
+   "w": 2,
+   "h": 55,
+   "layer": "wall"
   },
   {
-   "op": "path",
-   "tile": "path_stone",
-   "points": [
-    [
-     46,
-     62
-    ],
-    [
-     46,
-     63
-    ]
-   ],
-   "width": 1
+   "op": "rect",
+   "tile": "ruin_wall",
+   "x": 33,
+   "y": 71,
+   "w": 68,
+   "h": 2,
+   "layer": "wall"
   },
   {
-   "op": "path",
-   "tile": "path_stone",
-   "points": [
-    [
-     83,
-     48
-    ],
-    [
-     83,
-     49
-    ]
-   ],
-   "width": 1
+   "op": "rect",
+   "tile": "ruin_wall",
+   "x": 33,
+   "y": 53,
+   "w": 1,
+   "h": 20,
+   "layer": "wall"
   },
   {
-   "op": "path",
-   "tile": "path_stone",
-   "points": [
-    [
-     88,
-     33
-    ],
-    [
-     88,
-     34
-    ],
-    [
-     88,
-     35
-    ]
-   ],
-   "width": 1
+   "op": "rect",
+   "tile": "ruin_wall",
+   "x": 100,
+   "y": 61,
+   "w": 1,
+   "h": 12,
+   "layer": "wall"
   },
   {
-   "op": "path",
-   "tile": "path_stone",
-   "points": [
-    [
-     81,
-     18
-    ],
-    [
-     81,
-     19
-    ],
-    [
-     81,
-     20
-    ],
-    [
-     81,
-     21
-    ]
-   ],
-   "width": 1
+   "op": "rect",
+   "tile": "ruin_wall",
+   "x": 30,
+   "y": 6,
+   "w": 3,
+   "h": 4,
+   "layer": "wall"
   },
   {
-   "op": "path",
-   "tile": "path_stone",
-   "points": [
-    [
-     19,
-     62
-    ],
-    [
-     19,
-     63
-    ]
-   ],
-   "width": 1
+   "op": "rect",
+   "tile": "ruin_wall",
+   "x": 38,
+   "y": 6,
+   "w": 2,
+   "h": 4,
+   "layer": "wall"
   },
   {
-   "op": "path",
+   "op": "rect",
    "tile": "path_stone",
-   "points": [
-    [
-     64,
-     46
-    ],
-    [
-     64,
-     47
-    ],
-    [
-     64,
-     48
-    ],
-    [
-     64,
-     49
-    ]
-   ],
-   "width": 1
+   "x": 45,
+   "y": 28,
+   "w": 34,
+   "h": 3,
+   "layer": "ground"
   },
   {
-   "op": "path",
+   "op": "rect",
    "tile": "path_stone",
-   "points": [
-    [
-     32,
-     61
-    ],
-    [
-     32,
-     62
-    ],
-    [
-     32,
-     63
-    ]
-   ],
-   "width": 1
+   "x": 51,
+   "y": 36,
+   "w": 22,
+   "h": 19,
+   "layer": "ground"
   },
   {
-   "op": "path",
+   "op": "rect",
    "tile": "path_stone",
-   "points": [
-    [
-     65,
-     61
-    ],
-    [
-     65,
-     62
-    ],
-    [
-     65,
-     63
-    ]
-   ],
-   "width": 1
+   "x": 26,
+   "y": 35,
+   "w": 20,
+   "h": 18,
+   "layer": "ground"
   },
   {
-   "op": "path",
+   "op": "rect",
    "tile": "path_stone",
-   "points": [
-    [
-     13,
-     20
-    ],
-    [
-     13,
-     21
-    ]
-   ],
-   "width": 1
+   "x": 9,
+   "y": 43,
+   "w": 15,
+   "h": 7,
+   "layer": "ground"
   },
   {
-   "op": "path",
+   "op": "rect",
    "tile": "path_stone",
-   "points": [
-    [
-     81,
-     62
-    ],
-    [
-     81,
-     63
-    ]
-   ],
-   "width": 1
+   "x": 76,
+   "y": 41,
+   "w": 37,
+   "h": 4,
+   "layer": "ground"
   },
   {
-   "op": "path",
+   "op": "rect",
    "tile": "path_stone",
-   "points": [
-    [
-     50,
-     18
-    ],
-    [
-     50,
-     19
-    ],
-    [
-     50,
-     20
-    ],
-    [
-     50,
-     21
-    ]
-   ],
-   "width": 1
+   "x": 94,
+   "y": 59,
+   "w": 19,
+   "h": 5,
+   "layer": "ground"
   },
   {
-   "op": "path",
+   "op": "rect",
    "tile": "path_stone",
-   "points": [
-    [
-     62,
-     32
-    ],
-    [
-     62,
-     33
-    ],
-    [
-     62,
-     34
-    ],
-    [
-     62,
-     35
-    ]
-   ],
-   "width": 1
+   "x": 36,
+   "y": 65,
+   "w": 17,
+   "h": 4,
+   "layer": "ground"
   },
   {
-   "op": "path",
+   "op": "rect",
    "tile": "path_stone",
-   "points": [
-    [
-     67,
-     18
-    ],
-    [
-     67,
-     19
-    ],
-    [
-     67,
-     20
-    ],
-    [
-     67,
-     21
-    ]
-   ],
-   "width": 1
-  },
-  {
-   "op": "path",
-   "tile": "path_stone",
-   "points": [
-    [
-     69,
-     34
-    ],
-    [
-     69,
-     35
-    ]
-   ],
-   "width": 1
-  },
-  {
-   "op": "path",
-   "tile": "path_stone",
-   "points": [
-    [
-     80,
-     33
-    ],
-    [
-     80,
-     34
-    ],
-    [
-     80,
-     35
-    ]
-   ],
-   "width": 1
-  },
-  {
-   "op": "path",
-   "tile": "path_stone",
-   "points": [
-    [
-     11,
-     61
-    ],
-    [
-     11,
-     62
-    ],
-    [
-     11,
-     63
-    ]
-   ],
-   "width": 1
-  },
-  {
-   "op": "path",
-   "tile": "path_stone",
-   "points": [
-    [
-     64,
-     70
-    ],
-    [
-     63,
-     70
-    ],
-    [
-     62,
-     70
-    ],
-    [
-     61,
-     70
-    ],
-    [
-     60,
-     70
-    ],
-    [
-     59,
-     70
-    ],
-    [
-     58,
-     70
-    ]
-   ],
-   "width": 1
+   "x": 29,
+   "y": 51,
+   "w": 9,
+   "h": 4,
+   "layer": "ground"
   },
   {
    "op": "rect",
    "tile": "path_stone",
    "x": 25,
-   "y": 37,
+   "y": 48,
+   "w": 11,
+   "h": 8,
+   "layer": "ground"
+  },
+  {
+   "op": "rect",
+   "tile": "path_stone",
+   "x": 1,
+   "y": 50,
+   "w": 5,
+   "h": 10,
+   "layer": "ground"
+  },
+  {
+   "op": "rect",
+   "tile": "dirt",
+   "x": 103,
+   "y": 66,
    "w": 15,
-   "h": 12
+   "h": 12,
+   "layer": "ground"
+  },
+  {
+   "op": "path",
+   "points": [
+    [
+     58,
+     28
+    ],
+    [
+     58,
+     79
+    ]
+   ],
+   "width": 6,
+   "tile": "path_stone"
+  },
+  {
+   "op": "path",
+   "points": [
+    [
+     0,
+     38
+    ],
+    [
+     119,
+     38
+    ]
+   ],
+   "width": 5,
+   "tile": "path_stone"
+  },
+  {
+   "op": "path",
+   "points": [
+    [
+     33,
+     0
+    ],
+    [
+     33,
+     34
+    ],
+    [
+     50,
+     34
+    ],
+    [
+     50,
+     38
+    ]
+   ],
+   "width": 5,
+   "tile": "path_stone"
+  },
+  {
+   "op": "path",
+   "points": [
+    [
+     8,
+     33
+    ],
+    [
+     46,
+     33
+    ]
+   ],
+   "width": 4,
+   "tile": "path_stone"
+  },
+  {
+   "op": "path",
+   "points": [
+    [
+     9,
+     30
+    ],
+    [
+     9,
+     49
+    ]
+   ],
+   "width": 4,
+   "tile": "path_stone"
+  },
+  {
+   "op": "path",
+   "points": [
+    [
+     24,
+     10
+    ],
+    [
+     24,
+     34
+    ]
+   ],
+   "width": 3,
+   "tile": "path_stone"
+  },
+  {
+   "op": "path",
+   "points": [
+    [
+     11,
+     26
+    ],
+    [
+     39,
+     26
+    ]
+   ],
+   "width": 3,
+   "tile": "path_stone"
+  },
+  {
+   "op": "path",
+   "points": [
+    [
+     39,
+     10
+    ],
+    [
+     39,
+     34
+    ]
+   ],
+   "width": 3,
+   "tile": "path_stone"
+  },
+  {
+   "op": "path",
+   "points": [
+    [
+     15,
+     10
+    ],
+    [
+     39,
+     10
+    ]
+   ],
+   "width": 3,
+   "tile": "path_stone"
+  },
+  {
+   "op": "path",
+   "points": [
+    [
+     81,
+     28
+    ],
+    [
+     109,
+     28
+    ],
+    [
+     109,
+     39
+    ]
+   ],
+   "width": 4,
+   "tile": "path_stone"
+  },
+  {
+   "op": "path",
+   "points": [
+    [
+     81,
+     41
+    ],
+    [
+     111,
+     41
+    ]
+   ],
+   "width": 4,
+   "tile": "path_stone"
+  },
+  {
+   "op": "path",
+   "points": [
+    [
+     89,
+     29
+    ],
+    [
+     89,
+     61
+    ]
+   ],
+   "width": 3,
+   "tile": "path_stone"
+  },
+  {
+   "op": "path",
+   "points": [
+    [
+     78,
+     56
+    ],
+    [
+     110,
+     56
+    ]
+   ],
+   "width": 4,
+   "tile": "path_stone"
+  },
+  {
+   "op": "path",
+   "points": [
+    [
+     76,
+     48
+    ],
+    [
+     76,
+     69
+    ]
+   ],
+   "width": 3,
+   "tile": "path_stone"
+  },
+  {
+   "op": "path",
+   "points": [
+    [
+     34,
+     54
+    ],
+    [
+     34,
+     69
+    ],
+    [
+     59,
+     69
+    ]
+   ],
+   "width": 4,
+   "tile": "path_stone"
+  },
+  {
+   "op": "path",
+   "points": [
+    [
+     34,
+     64
+    ],
+    [
+     60,
+     64
+    ]
+   ],
+   "width": 4,
+   "tile": "path_stone"
+  },
+  {
+   "op": "path",
+   "points": [
+    [
+     75,
+     63
+    ],
+    [
+     114,
+     63
+    ]
+   ],
+   "width": 4,
+   "tile": "path_stone"
+  },
+  {
+   "op": "path",
+   "points": [
+    [
+     75,
+     69
+    ],
+    [
+     94,
+     69
+    ]
+   ],
+   "width": 4,
+   "tile": "path_stone"
+  },
+  {
+   "op": "path",
+   "points": [
+    [
+     108,
+     64
+    ],
+    [
+     108,
+     76
+    ]
+   ],
+   "width": 3,
+   "tile": "dirt"
+  },
+  {
+   "op": "path",
+   "points": [
+    [
+     101,
+     73
+    ],
+    [
+     118,
+     73
+    ]
+   ],
+   "width": 3,
+   "tile": "dirt"
+  },
+  {
+   "op": "path",
+   "points": [
+    [
+     113,
+     38
+    ],
+    [
+     116,
+     38
+    ],
+    [
+     116,
+     13
+    ]
+   ],
+   "width": 3,
+   "tile": "dirt"
+  },
+  {
+   "op": "rect",
+   "tile": "wood_plank",
+   "x": 16,
+   "y": 53,
+   "w": 4,
+   "h": 23,
+   "layer": "ground"
+  },
+  {
+   "op": "rect",
+   "tile": "wood_plank",
+   "x": 5,
+   "y": 60,
+   "w": 29,
+   "h": 3,
+   "layer": "ground"
+  },
+  {
+   "op": "rect",
+   "tile": "wood_plank",
+   "x": 6,
+   "y": 54,
+   "w": 4,
+   "h": 20,
+   "layer": "ground"
+  },
+  {
+   "op": "rect",
+   "tile": "wood_plank",
+   "x": 5,
+   "y": 69,
+   "w": 25,
+   "h": 2,
+   "layer": "ground"
+  },
+  {
+   "op": "path",
+   "points": [
+    [
+     29,
+     54
+    ],
+    [
+     34,
+     54
+    ]
+   ],
+   "width": 4,
+   "tile": "path_stone"
+  },
+  {
+   "op": "rect",
+   "tile": "wood_plank",
+   "x": 21,
+   "y": 53,
+   "w": 13,
+   "h": 2,
+   "layer": "ground"
   },
   {
    "op": "building",
-   "style": "inn",
-   "x": 30,
-   "y": 28,
-   "w": 8,
-   "h": 6,
-   "door": 4,
-   "sign": "Inn"
+   "style": "aurelion_palace",
+   "x": 45,
+   "y": 13,
+   "w": 31,
+   "h": 15,
+   "door": 15,
+   "sign": "Royal Palace"
+  },
+  {
+   "op": "building",
+   "style": "aurelion_residence",
+   "x": 11,
+   "y": 15,
+   "w": 5,
+   "h": 4,
+   "door": 3
+  },
+  {
+   "op": "building",
+   "style": "aurelion_residence",
+   "x": 19,
+   "y": 15,
+   "w": 5,
+   "h": 4,
+   "door": 2
+  },
+  {
+   "op": "building",
+   "style": "aurelion_residence",
+   "x": 28,
+   "y": 15,
+   "w": 5,
+   "h": 4,
+   "door": 2
+  },
+  {
+   "op": "building",
+   "style": "aurelion_residence",
+   "x": 11,
+   "y": 23,
+   "w": 5,
+   "h": 3,
+   "door": 3
+  },
+  {
+   "op": "building",
+   "style": "aurelion_residence",
+   "x": 19,
+   "y": 23,
+   "w": 5,
+   "h": 3,
+   "door": 2
+  },
+  {
+   "op": "building",
+   "style": "aurelion_residence",
+   "x": 28,
+   "y": 23,
+   "w": 5,
+   "h": 3,
+   "door": 2
+  },
+  {
+   "op": "building",
+   "style": "aurelion_residence",
+   "x": 11,
+   "y": 30,
+   "w": 5,
+   "h": 4,
+   "door": 3
+  },
+  {
+   "op": "building",
+   "style": "aurelion_residence",
+   "x": 19,
+   "y": 30,
+   "w": 5,
+   "h": 4,
+   "door": 2
+  },
+  {
+   "op": "building",
+   "style": "aurelion_residence",
+   "x": 28,
+   "y": 30,
+   "w": 5,
+   "h": 4,
+   "door": 2
   },
   {
    "op": "building",
    "style": "guild",
-   "x": 12,
-   "y": 42,
+   "x": 10,
+   "y": 39,
+   "w": 13,
+   "h": 7,
+   "door": 6,
+   "sign": "Adventurers' Guild"
+  },
+  {
+   "op": "building",
+   "style": "knight_guild",
+   "x": 78,
+   "y": 35,
    "w": 10,
    "h": 6,
    "door": 5,
-   "sign": "Guild Hall"
+   "sign": "Knight Guild"
+  },
+  {
+   "op": "building",
+   "style": "ranger_guild",
+   "x": 90,
+   "y": 35,
+   "w": 9,
+   "h": 6,
+   "door": 4,
+   "sign": "Ranger Guild"
+  },
+  {
+   "op": "building",
+   "style": "mage_guild",
+   "x": 101,
+   "y": 35,
+   "w": 9,
+   "h": 6,
+   "door": 4,
+   "sign": "Mage Guild"
+  },
+  {
+   "op": "building",
+   "style": "merchant_guild",
+   "x": 78,
+   "y": 50,
+   "w": 11,
+   "h": 6,
+   "door": 5,
+   "sign": "Merchant Guild"
+  },
+  {
+   "op": "building",
+   "style": "aurelion_cathedral",
+   "x": 96,
+   "y": 50,
+   "w": 13,
+   "h": 9,
+   "door": 7,
+   "sign": "Royal Cathedral"
+  },
+  {
+   "op": "building",
+   "style": "inn",
+   "x": 38,
+   "y": 58,
+   "w": 12,
+   "h": 7,
+   "door": 6,
+   "sign": "Royal Inn"
   },
   {
    "op": "building",
    "style": "smithy",
-   "x": 43,
-   "y": 29,
+   "x": 25,
+   "y": 49,
    "w": 8,
    "h": 5,
    "door": 4,
-   "sign": "Smithy"
+   "sign": "Capital Smithy"
   },
   {
    "op": "building",
-   "style": "shop",
-   "x": 44,
-   "y": 40,
-   "w": 7,
-   "h": 5,
-   "door": 3,
-   "sign": "Tools"
-  },
-  {
-   "op": "building",
-   "style": "shop",
-   "x": 30,
-   "y": 15,
-   "w": 9,
-   "h": 5,
-   "door": 4,
-   "sign": "Market Hall"
-  },
-  {
-   "op": "building",
-   "style": "house",
-   "x": 14,
-   "y": 29,
+   "style": "aurelion_farmhouse",
+   "x": 104,
+   "y": 14,
    "w": 6,
    "h": 5,
-   "door": 3,
-   "sign": "Courier"
+   "door": 2,
+   "sign": "Royal Farm"
   },
   {
    "op": "building",
-   "style": "house",
-   "x": 43,
-   "y": 57,
-   "w": 7,
-   "h": 5,
-   "door": 3,
-   "sign": "Stable"
+   "style": "aurelion_stall_red",
+   "x": 28,
+   "y": 36,
+   "w": 5,
+   "h": 4,
+   "door": 2
   },
   {
    "op": "building",
-   "style": "house",
-   "x": 81,
+   "style": "aurelion_stall_gold",
+   "x": 36,
+   "y": 36,
+   "w": 5,
+   "h": 4,
+   "door": 3
+  },
+  {
+   "op": "building",
+   "style": "aurelion_stall_blue",
+   "x": 28,
    "y": 43,
    "w": 5,
-   "h": 5,
+   "h": 3,
    "door": 2
   },
   {
    "op": "building",
-   "style": "house",
-   "x": 86,
-   "y": 28,
+   "style": "aurelion_stall_red",
+   "x": 36,
+   "y": 43,
    "w": 5,
-   "h": 5,
-   "door": 2
-  },
-  {
-   "op": "building",
-   "style": "house",
-   "x": 78,
-   "y": 13,
-   "w": 7,
-   "h": 5,
+   "h": 3,
    "door": 3
   },
   {
    "op": "building",
-   "style": "house",
-   "x": 17,
-   "y": 58,
+   "style": "aurelion_residence",
+   "x": 36,
+   "y": 68,
    "w": 5,
-   "h": 4,
-   "door": 2
-  },
-  {
-   "op": "building",
-   "style": "house",
-   "x": 61,
-   "y": 41,
-   "w": 6,
-   "h": 5,
+   "h": 3,
    "door": 3
   },
   {
    "op": "building",
-   "style": "house",
-   "x": 29,
-   "y": 57,
-   "w": 7,
+   "style": "aurelion_residence",
+   "x": 45,
+   "y": 68,
+   "w": 5,
+   "h": 3,
+   "door": 3
+  },
+  {
+   "op": "building",
+   "style": "aurelion_residence",
+   "x": 71,
+   "y": 64,
+   "w": 5,
    "h": 4,
    "door": 3
   },
   {
    "op": "building",
-   "style": "house",
-   "x": 63,
-   "y": 57,
+   "style": "aurelion_residence",
+   "x": 80,
+   "y": 64,
    "w": 5,
-   "h": 4,
-   "door": 2
-  },
-  {
-   "op": "building",
-   "style": "house",
-   "x": 10,
-   "y": 16,
-   "w": 7,
    "h": 4,
    "door": 3
   },
   {
    "op": "building",
-   "style": "house",
-   "x": 78,
-   "y": 57,
-   "w": 6,
-   "h": 5,
-   "door": 3
-  },
-  {
-   "op": "building",
-   "style": "house",
-   "x": 48,
-   "y": 13,
-   "w": 5,
-   "h": 5,
-   "door": 2
-  },
-  {
-   "op": "building",
-   "style": "house",
-   "x": 60,
-   "y": 27,
-   "w": 5,
-   "h": 5,
-   "door": 2
-  },
-  {
-   "op": "building",
-   "style": "house",
-   "x": 65,
-   "y": 13,
-   "w": 5,
-   "h": 5,
-   "door": 2
-  },
-  {
-   "op": "building",
-   "style": "house",
-   "x": 67,
-   "y": 29,
-   "w": 5,
-   "h": 5,
-   "door": 2
-  },
-  {
-   "op": "building",
-   "style": "house",
-   "x": 77,
-   "y": 29,
-   "w": 7,
-   "h": 4,
-   "door": 3
-  },
-  {
-   "op": "building",
-   "style": "house",
-   "x": 9,
-   "y": 57,
+   "style": "aurelion_residence",
+   "x": 88,
+   "y": 64,
    "w": 5,
    "h": 4,
    "door": 2
   },
   {
-   "op": "building",
-   "style": "house",
-   "x": 61,
-   "y": 66,
-   "w": 6,
-   "h": 4,
-   "door": 3
+   "op": "rect",
+   "tile": "soil",
+   "x": 84,
+   "y": 14,
+   "w": 5,
+   "h": 10,
+   "layer": "ground"
+  },
+  {
+   "op": "rect",
+   "tile": "crops",
+   "x": 84,
+   "y": 14,
+   "w": 5,
+   "h": 10,
+   "layer": "deco"
+  },
+  {
+   "op": "rect",
+   "tile": "soil",
+   "x": 91,
+   "y": 14,
+   "w": 5,
+   "h": 10,
+   "layer": "ground"
+  },
+  {
+   "op": "rect",
+   "tile": "crops",
+   "x": 91,
+   "y": 14,
+   "w": 5,
+   "h": 10,
+   "layer": "deco"
+  },
+  {
+   "op": "rect",
+   "tile": "soil",
+   "x": 99,
+   "y": 14,
+   "w": 5,
+   "h": 10,
+   "layer": "ground"
+  },
+  {
+   "op": "rect",
+   "tile": "crops",
+   "x": 99,
+   "y": 14,
+   "w": 5,
+   "h": 10,
+   "layer": "deco"
   },
   {
    "op": "object",
-   "kind": "fountain",
-   "x": 31,
-   "y": 41,
+   "kind": "capital_windmill",
+   "x": 106,
+   "y": 23
+  },
+  {
+   "op": "object",
+   "kind": "haystack",
+   "x": 104,
+   "y": 21
+  },
+  {
+   "op": "object",
+   "kind": "haystack",
+   "x": 109,
+   "y": 21
+  },
+  {
+   "op": "object",
+   "kind": "capital_statue",
+   "x": 59,
+   "y": 39
+  },
+  {
+   "op": "object",
+   "kind": "capital_fountain",
+   "x": 59,
+   "y": 46,
    "id": "aurelion_fountain"
   },
   {
    "op": "object",
-   "kind": "lamp_post",
-   "x": 25,
-   "y": 37
+   "kind": "capital_ship",
+   "x": 10,
+   "y": 54
+  },
+  {
+   "op": "object",
+   "kind": "capital_galleon",
+   "x": 23,
+   "y": 63
+  },
+  {
+   "op": "object",
+   "kind": "capital_rowboat",
+   "x": 4,
+   "y": 73
+  },
+  {
+   "op": "object",
+   "kind": "capital_lighthouse",
+   "x": 3,
+   "y": 56
+  },
+  {
+   "op": "object",
+   "kind": "capital_cave",
+   "x": 114,
+   "y": 9
+  },
+  {
+   "op": "object",
+   "kind": "capital_training_dummy",
+   "x": 104,
+   "y": 68
+  },
+  {
+   "op": "object",
+   "kind": "capital_training_dummy",
+   "x": 110,
+   "y": 68
+  },
+  {
+   "op": "object",
+   "kind": "capital_training_dummy",
+   "x": 115,
+   "y": 68
+  },
+  {
+   "op": "object",
+   "kind": "capital_training_dummy",
+   "x": 104,
+   "y": 75
+  },
+  {
+   "op": "object",
+   "kind": "capital_training_dummy",
+   "x": 113,
+   "y": 75
   },
   {
    "op": "object",
    "kind": "lamp_post",
-   "x": 39,
-   "y": 37
+   "x": 53,
+   "y": 38
   },
   {
    "op": "object",
    "kind": "lamp_post",
-   "x": 25,
-   "y": 48
+   "x": 70,
+   "y": 38
   },
   {
    "op": "object",
    "kind": "lamp_post",
-   "x": 39,
-   "y": 48
+   "x": 53,
+   "y": 53
   },
   {
    "op": "object",
-   "kind": "planter",
-   "x": 37,
-   "y": 51
+   "kind": "lamp_post",
+   "x": 70,
+   "y": 53
   },
   {
    "op": "object",
-   "kind": "planter",
-   "x": 25,
-   "y": 51
+   "kind": "lamp_post",
+   "x": 56,
+   "y": 30
   },
   {
    "op": "object",
-   "kind": "planter",
-   "x": 38,
-   "y": 51
+   "kind": "lamp_post",
+   "x": 65,
+   "y": 30
   },
   {
    "op": "object",
-   "kind": "planter",
-   "x": 37,
-   "y": 34
+   "kind": "lamp_post",
+   "x": 24,
+   "y": 35
   },
   {
    "op": "object",
-   "kind": "anvil",
-   "x": 44,
-   "y": 34
-  },
-  {
-   "op": "object",
-   "kind": "barrel",
-   "x": 50,
-   "y": 34
-  },
-  {
-   "op": "object",
-   "kind": "crate",
-   "x": 42,
-   "y": 43
-  },
-  {
-   "op": "object",
-   "kind": "barrel",
-   "x": 42,
+   "kind": "lamp_post",
+   "x": 45,
    "y": 44
   },
   {
    "op": "object",
-   "kind": "crate",
-   "x": 37,
-   "y": 20
+   "kind": "lamp_post",
+   "x": 91,
+   "y": 49
+  },
+  {
+   "op": "object",
+   "kind": "lamp_post",
+   "x": 110,
+   "y": 59
+  },
+  {
+   "op": "object",
+   "kind": "lamp_post",
+   "x": 39,
+   "y": 55
+  },
+  {
+   "op": "object",
+   "kind": "lamp_post",
+   "x": 51,
+   "y": 68
+  },
+  {
+   "op": "object",
+   "kind": "planter",
+   "x": 53,
+   "y": 41
+  },
+  {
+   "op": "object",
+   "kind": "planter",
+   "x": 69,
+   "y": 41
+  },
+  {
+   "op": "object",
+   "kind": "planter",
+   "x": 53,
+   "y": 50
+  },
+  {
+   "op": "object",
+   "kind": "planter",
+   "x": 69,
+   "y": 50
+  },
+  {
+   "op": "object",
+   "kind": "planter",
+   "x": 50,
+   "y": 29
+  },
+  {
+   "op": "object",
+   "kind": "planter",
+   "x": 71,
+   "y": 29
+  },
+  {
+   "op": "object",
+   "kind": "planter",
+   "x": 91,
+   "y": 53
+  },
+  {
+   "op": "object",
+   "kind": "planter",
+   "x": 110,
+   "y": 53
+  },
+  {
+   "op": "object",
+   "kind": "planter",
+   "x": 35,
+   "y": 58
+  },
+  {
+   "op": "object",
+   "kind": "planter",
+   "x": 50,
+   "y": 58
+  },
+  {
+   "op": "object",
+   "kind": "tree_oak",
+   "x": 10,
+   "y": 10
+  },
+  {
+   "op": "object",
+   "kind": "tree_oak",
+   "x": 18,
+   "y": 10
+  },
+  {
+   "op": "object",
+   "kind": "tree_oak",
+   "x": 40,
+   "y": 9
+  },
+  {
+   "op": "object",
+   "kind": "tree_oak",
+   "x": 9,
+   "y": 23
+  },
+  {
+   "op": "object",
+   "kind": "tree_oak",
+   "x": 39,
+   "y": 23
+  },
+  {
+   "op": "object",
+   "kind": "tree_oak",
+   "x": 40,
+   "y": 29
+  },
+  {
+   "op": "object",
+   "kind": "tree_oak",
+   "x": 44,
+   "y": 11
+  },
+  {
+   "op": "object",
+   "kind": "tree_oak",
+   "x": 78,
+   "y": 11
+  },
+  {
+   "op": "object",
+   "kind": "tree_oak",
+   "x": 84,
+   "y": 9
+  },
+  {
+   "op": "object",
+   "kind": "tree_oak",
+   "x": 105,
+   "y": 9
+  },
+  {
+   "op": "object",
+   "kind": "tree_oak",
+   "x": 110,
+   "y": 28
+  },
+  {
+   "op": "object",
+   "kind": "tree_oak",
+   "x": 99,
+   "y": 60
+  },
+  {
+   "op": "object",
+   "kind": "tree_oak",
+   "x": 68,
+   "y": 66
+  },
+  {
+   "op": "object",
+   "kind": "tree_oak",
+   "x": 91,
+   "y": 70
+  },
+  {
+   "op": "object",
+   "kind": "tree_oak",
+   "x": 53,
+   "y": 66
   },
   {
    "op": "object",
    "kind": "crate",
-   "x": 31,
-   "y": 20
+   "x": 21,
+   "y": 54
+  },
+  {
+   "op": "object",
+   "kind": "crate",
+   "x": 30,
+   "y": 60
+  },
+  {
+   "op": "object",
+   "kind": "crate",
+   "x": 15,
+   "y": 61
+  },
+  {
+   "op": "object",
+   "kind": "crate",
+   "x": 8,
+   "y": 64
+  },
+  {
+   "op": "object",
+   "kind": "crate",
+   "x": 25,
+   "y": 54
+  },
+  {
+   "op": "object",
+   "kind": "crate",
+   "x": 39,
+   "y": 50
+  },
+  {
+   "op": "object",
+   "kind": "barrel",
+   "x": 26,
+   "y": 54
+  },
+  {
+   "op": "object",
+   "kind": "barrel",
+   "x": 29,
+   "y": 61
+  },
+  {
+   "op": "object",
+   "kind": "barrel",
+   "x": 18,
+   "y": 64
   },
   {
    "op": "object",
    "kind": "barrel",
    "x": 30,
-   "y": 20
-  },
-  {
-   "op": "object",
-   "kind": "haystack",
-   "x": 43,
-   "y": 62
-  },
-  {
-   "op": "object",
-   "kind": "haystack",
-   "x": 49,
-   "y": 62
+   "y": 48
   },
   {
    "op": "object",
    "kind": "barrel",
-   "x": 31,
-   "y": 34
-  },
-  {
-   "op": "object",
-   "kind": "planter",
-   "x": 15,
-   "y": 51
-  },
-  {
-   "op": "object",
-   "kind": "planter",
-   "x": 22,
-   "y": 51
-  },
-  {
-   "op": "object",
-   "kind": "bush",
-   "x": 15,
-   "y": 56
-  },
-  {
-   "op": "object",
-   "kind": "bush",
-   "x": 22,
-   "y": 56
-  },
-  {
-   "op": "object",
-   "kind": "signpost",
-   "x": 45,
-   "y": 70
-  },
-  {
-   "op": "object",
-   "kind": "signpost",
-   "x": 46,
-   "y": 3
-  },
-  {
-   "op": "object",
-   "kind": "signpost",
-   "x": 92,
-   "y": 35
-  },
-  {
-   "op": "object",
-   "kind": "signpost",
-   "x": 3,
-   "y": 36
+   "x": 43,
+   "y": 43
   },
   {
    "op": "scatter",
    "kind": "deco:flowers",
-   "area": {
-    "x": 15,
-    "y": 51,
-    "w": 8,
-    "h": 6
-   },
-   "density": 0.35,
-   "seed": 3305411619
-  },
-  {
-   "op": "scatter",
-   "kind": "tree_oak",
-   "density": 0.01,
-   "seed": 3305411623
-  },
-  {
-   "op": "scatter",
-   "kind": "deco:flowers",
-   "density": 0.03,
-   "seed": 3305411615
+   "density": 0.05,
+   "seed": 23061030
   },
   {
    "op": "scatter",
    "kind": "deco:tuft",
-   "density": 0.03,
-   "seed": 3305411617
+   "density": 0.02,
+   "seed": 23061031
+  },
+  {
+   "op": "scatter",
+   "kind": "tree_oak",
+   "area": {
+    "x": 3,
+    "y": 3,
+    "w": 115,
+    "h": 2
+   },
+   "density": 0.2,
+   "seed": 23061032
+  },
+  {
+   "op": "scatter",
+   "kind": "tree_oak",
+   "area": {
+    "x": 3,
+    "y": 10,
+    "w": 2,
+    "h": 38
+   },
+   "density": 0.18,
+   "seed": 23061033
+  },
+  {
+   "op": "scatter",
+   "kind": "tree_oak",
+   "area": {
+    "x": 114,
+    "y": 3,
+    "w": 4,
+    "h": 33
+   },
+   "density": 0.18,
+   "seed": 23061034
   }
  ],
  "portals": [
   {
    "id": "to_aurelion_fields_south",
-   "x": 46,
-   "y": 74,
-   "w": 4,
+   "x": 58,
+   "y": 78,
+   "w": 6,
    "h": 2,
    "targetMap": "aurelion_fields_south",
    "targetSpawn": "from_aurelion",
@@ -1114,20 +1498,20 @@
   },
   {
    "id": "to_aurelion_fields_north",
-   "x": 46,
+   "x": 33,
    "y": 0,
-   "w": 4,
-   "h": 2,
+   "w": 5,
+   "h": 3,
    "targetMap": "aurelion_fields_north",
    "targetSpawn": "from_aurelion",
    "label": "Aurelion Fields North"
   },
   {
    "id": "to_arcanthe_heath",
-   "x": 94,
-   "y": 36,
+   "x": 118,
+   "y": 38,
    "w": 2,
-   "h": 4,
+   "h": 5,
    "targetMap": "arcanthe_heath",
    "targetSpawn": "from_aurelion",
    "label": "Arcanthe Heath"
@@ -1135,137 +1519,137 @@
   {
    "id": "to_aurelion_catacombs",
    "x": 0,
-   "y": 36,
-   "w": 2,
-   "h": 4,
+   "y": 38,
+   "w": 3,
+   "h": 5,
    "targetMap": "aurelion_catacombs",
    "targetSpawn": "from_aurelion",
    "label": "Aurelion Catacombs"
   }
  ],
  "spawnPoints": {
+  "default": {
+   "x": 60,
+   "y": 51
+  },
   "from_aurelion_fields_south": {
-   "x": 48,
-   "y": 71
+   "x": 60,
+   "y": 75
   },
   "from_aurelion_fields_north": {
-   "x": 48,
-   "y": 4
+   "x": 35,
+   "y": 5
   },
   "from_arcanthe_heath": {
-   "x": 91,
-   "y": 38
+   "x": 114,
+   "y": 40
   },
   "from_aurelion_catacombs": {
-   "x": 4,
-   "y": 38
-  },
-  "default": {
-   "x": 32,
-   "y": 44
+   "x": 5,
+   "y": 40
   }
  },
  "npcs": [
   {
    "npcId": "aurelion_innkeeper",
-   "x": 35,
-   "y": 36,
+   "x": 44,
+   "y": 66,
    "facing": "down"
   },
   {
    "npcId": "aurelion_smith",
-   "x": 46,
-   "y": 36,
+   "x": 33,
+   "y": 54,
    "facing": "down"
   },
   {
    "npcId": "aurelion_merchant",
-   "x": 48,
-   "y": 47,
-   "facing": "down"
-  },
-  {
-   "npcId": "aurelion_courier",
-   "x": 16,
-   "y": 36,
-   "facing": "down"
-  },
-  {
-   "npcId": "guild_knight",
-   "x": 18,
-   "y": 50,
-   "facing": "down"
-  },
-  {
-   "npcId": "guild_cleric",
-   "x": 16,
-   "y": 50,
-   "facing": "down"
-  },
-  {
-   "npcId": "aurelion_stable",
-   "x": 47,
-   "y": 64,
-   "facing": "down"
-  },
-  {
-   "npcId": "guild_dragoon",
-   "x": 19,
-   "y": 48,
-   "facing": "down"
-  },
-  {
-   "npcId": "guild_templar",
-   "x": 15,
-   "y": 48,
-   "facing": "down"
-  },
-  {
-   "npcId": "guild_bishop",
-   "x": 20,
-   "y": 50,
-   "facing": "down"
-  },
-  {
-   "npcId": "guild_ascetic",
-   "x": 14,
-   "y": 50,
-   "facing": "down"
-  },
-  {
-   "npcId": "oracle_rebirth",
-   "x": 13,
-   "y": 48,
-   "facing": "down"
-  },
-  {
-   "npcId": "aurelion_jobmaster",
-   "x": 21,
-   "y": 48,
-   "facing": "down"
-  },
-  {
-   "npcId": "aurelion_arena",
-   "x": 34,
-   "y": 42,
-   "facing": "down"
-  },
-  {
-   "npcId": "spire_warden",
-   "x": 36,
+   "x": 33,
    "y": 41,
    "facing": "down"
   },
   {
+   "npcId": "aurelion_courier",
+   "x": 54,
+   "y": 50,
+   "facing": "down"
+  },
+  {
+   "npcId": "guild_knight",
+   "x": 81,
+   "y": 44,
+   "facing": "down"
+  },
+  {
+   "npcId": "guild_cleric",
+   "x": 99,
+   "y": 61,
+   "facing": "down"
+  },
+  {
+   "npcId": "aurelion_stable",
+   "x": 106,
+   "y": 28,
+   "facing": "down"
+  },
+  {
+   "npcId": "guild_dragoon",
+   "x": 85,
+   "y": 44,
+   "facing": "down"
+  },
+  {
+   "npcId": "guild_templar",
+   "x": 78,
+   "y": 44,
+   "facing": "down"
+  },
+  {
+   "npcId": "guild_bishop",
+   "x": 103,
+   "y": 61,
+   "facing": "down"
+  },
+  {
+   "npcId": "guild_ascetic",
+   "x": 106,
+   "y": 61,
+   "facing": "down"
+  },
+  {
+   "npcId": "oracle_rebirth",
+   "x": 95,
+   "y": 61,
+   "facing": "down"
+  },
+  {
+   "npcId": "aurelion_jobmaster",
+   "x": 14,
+   "y": 46,
+   "facing": "down"
+  },
+  {
+   "npcId": "aurelion_arena",
+   "x": 18,
+   "y": 46,
+   "facing": "down"
+  },
+  {
+   "npcId": "spire_warden",
+   "x": 21,
+   "y": 46,
+   "facing": "down"
+  },
+  {
    "npcId": "aurelion_trader",
-   "x": 46,
-   "y": 47,
+   "x": 38,
+   "y": 48,
    "facing": "down"
   },
   {
    "npcId": "aurelion_market",
-   "x": 35,
-   "y": 22,
+   "x": 41,
+   "y": 48,
    "facing": "down"
   }
  ],
@@ -1273,10 +1657,10 @@
  "objects": [
   {
    "id": "aurelion_fountain",
-   "kind": "fountain",
-   "x": 31,
-   "y": 41,
-   "name": "Aurelion Fountain",
+   "kind": "capital_fountain",
+   "x": 59,
+   "y": 46,
+   "name": "Aurelion Royal Fountain",
    "interact": {
     "text": "Royal Capital Aurelion. Aurelion — Royal Capital."
    }
@@ -1284,15 +1668,457 @@
  ],
  "areas": [
   {
+   "id": "palace",
+   "name": "Royal Palace",
+   "rect": {
+    "x": 44,
+    "y": 11,
+    "w": 35,
+    "h": 20
+   },
+   "label": {
+    "x": 60.625,
+    "y": 21.25
+   }
+  },
+  {
    "id": "plaza",
    "name": "Royal Square",
    "rect": {
-    "x": 25,
-    "y": 37,
+    "x": 51,
+    "y": 36,
+    "w": 22,
+    "h": 19
+   },
+   "label": {
+    "x": 61.25,
+    "y": 45
+   }
+  },
+  {
+   "id": "residential",
+   "name": "Residential Quarter",
+   "rect": {
+    "x": 10,
+    "y": 11,
+    "w": 30,
+    "h": 20
+   },
+   "label": {
+    "x": 23.75,
+    "y": 13.75
+   }
+  },
+  {
+   "id": "market",
+   "name": "Central Market",
+   "rect": {
+    "x": 26,
+    "y": 35,
+    "w": 19,
+    "h": 16
+   },
+   "label": {
+    "x": 35,
+    "y": 35
+   }
+  },
+  {
+   "id": "adventurers",
+   "name": "Adventurers Guild",
+   "rect": {
+    "x": 9,
+    "y": 35,
     "w": 15,
+    "h": 14
+   },
+   "label": {
+    "x": 16.25,
+    "y": 35
+   }
+  },
+  {
+   "id": "guilds",
+   "name": "Guild Quarter",
+   "rect": {
+    "x": 78,
+    "y": 34,
+    "w": 33,
     "h": 12
+   },
+   "label": {
+    "x": 93.75,
+    "y": 33.75
+   }
+  },
+  {
+   "id": "cathedral",
+   "name": "Royal Cathedral",
+   "rect": {
+    "x": 95,
+    "y": 49,
+    "w": 16,
+    "h": 12
+   },
+   "label": {
+    "x": 102.5,
+    "y": 48.75
+   }
+  },
+  {
+   "id": "harbor",
+   "name": "Royal Harbor",
+   "rect": {
+    "x": 3,
+    "y": 53,
+    "w": 30,
+    "h": 23
+   },
+   "label": {
+    "x": 18.75,
+    "y": 58.75
+   }
+  },
+  {
+   "id": "farm",
+   "name": "Royal Farm",
+   "rect": {
+    "x": 83,
+    "y": 11,
+    "w": 28,
+    "h": 18
+   },
+   "label": {
+    "x": 95,
+    "y": 12.5
+   }
+  },
+  {
+   "id": "inn",
+   "name": "Inn Quarter",
+   "rect": {
+    "x": 35,
+    "y": 55,
+    "w": 18,
+    "h": 16
+   },
+   "label": {
+    "x": 43.75,
+    "y": 56.25
+   }
+  },
+  {
+   "id": "trade",
+   "name": "Trade Quarter",
+   "rect": {
+    "x": 69,
+    "y": 61,
+    "w": 25,
+    "h": 10
+   },
+   "label": {
+    "x": 81.25,
+    "y": 62.5
+   }
+  },
+  {
+   "id": "training",
+   "name": "Training Ground",
+   "rect": {
+    "x": 101,
+    "y": 65,
+    "w": 18,
+    "h": 13
+   },
+   "label": {
+    "x": 108.75,
+    "y": 66.25
    }
   }
  ],
- "generated": true
+ "generated": true,
+ "scenery": [
+  {
+   "kind": "city_wall",
+   "x": 7.5,
+   "y": 7.5,
+   "w": 5,
+   "h": 3.125
+  },
+  {
+   "kind": "city_wall",
+   "x": 12.5,
+   "y": 7.5,
+   "w": 5,
+   "h": 3.125
+  },
+  {
+   "kind": "city_wall",
+   "x": 17.5,
+   "y": 7.5,
+   "w": 5,
+   "h": 3.125
+  },
+  {
+   "kind": "city_wall",
+   "x": 22.5,
+   "y": 7.5,
+   "w": 5,
+   "h": 3.125
+  },
+  {
+   "kind": "city_wall",
+   "x": 27.5,
+   "y": 7.5,
+   "w": 5,
+   "h": 3.125
+  },
+  {
+   "kind": "city_wall",
+   "x": 42.5,
+   "y": 7.5,
+   "w": 5,
+   "h": 3.125
+  },
+  {
+   "kind": "city_wall",
+   "x": 47.5,
+   "y": 7.5,
+   "w": 5,
+   "h": 3.125
+  },
+  {
+   "kind": "city_wall",
+   "x": 52.5,
+   "y": 7.5,
+   "w": 5,
+   "h": 3.125
+  },
+  {
+   "kind": "city_wall",
+   "x": 57.5,
+   "y": 7.5,
+   "w": 5,
+   "h": 3.125
+  },
+  {
+   "kind": "city_wall",
+   "x": 62.5,
+   "y": 7.5,
+   "w": 5,
+   "h": 3.125
+  },
+  {
+   "kind": "city_wall",
+   "x": 67.5,
+   "y": 7.5,
+   "w": 5,
+   "h": 3.125
+  },
+  {
+   "kind": "city_wall",
+   "x": 72.5,
+   "y": 7.5,
+   "w": 5,
+   "h": 3.125
+  },
+  {
+   "kind": "city_wall",
+   "x": 77.5,
+   "y": 7.5,
+   "w": 5,
+   "h": 3.125
+  },
+  {
+   "kind": "city_wall",
+   "x": 82.5,
+   "y": 7.5,
+   "w": 5,
+   "h": 3.125
+  },
+  {
+   "kind": "city_wall",
+   "x": 87.5,
+   "y": 7.5,
+   "w": 5,
+   "h": 3.125
+  },
+  {
+   "kind": "city_wall",
+   "x": 92.5,
+   "y": 7.5,
+   "w": 5,
+   "h": 3.125
+  },
+  {
+   "kind": "city_wall",
+   "x": 97.5,
+   "y": 7.5,
+   "w": 5,
+   "h": 3.125
+  },
+  {
+   "kind": "city_wall",
+   "x": 102.5,
+   "y": 7.5,
+   "w": 5,
+   "h": 3.125
+  },
+  {
+   "kind": "city_wall",
+   "x": 32.5,
+   "y": 72.5,
+   "w": 5,
+   "h": 3.125
+  },
+  {
+   "kind": "city_wall",
+   "x": 37.5,
+   "y": 72.5,
+   "w": 5,
+   "h": 3.125
+  },
+  {
+   "kind": "city_wall",
+   "x": 42.5,
+   "y": 72.5,
+   "w": 5,
+   "h": 3.125
+  },
+  {
+   "kind": "city_wall",
+   "x": 47.5,
+   "y": 72.5,
+   "w": 5,
+   "h": 3.125
+  },
+  {
+   "kind": "city_wall",
+   "x": 52.5,
+   "y": 72.5,
+   "w": 5,
+   "h": 3.125
+  },
+  {
+   "kind": "city_wall",
+   "x": 67.5,
+   "y": 72.5,
+   "w": 5,
+   "h": 3.125
+  },
+  {
+   "kind": "city_wall",
+   "x": 72.5,
+   "y": 72.5,
+   "w": 5,
+   "h": 3.125
+  },
+  {
+   "kind": "city_wall",
+   "x": 77.5,
+   "y": 72.5,
+   "w": 5,
+   "h": 3.125
+  },
+  {
+   "kind": "city_wall",
+   "x": 82.5,
+   "y": 72.5,
+   "w": 5,
+   "h": 3.125
+  },
+  {
+   "kind": "city_wall",
+   "x": 87.5,
+   "y": 72.5,
+   "w": 5,
+   "h": 3.125
+  },
+  {
+   "kind": "city_wall",
+   "x": 92.5,
+   "y": 72.5,
+   "w": 5,
+   "h": 3.125
+  },
+  {
+   "kind": "city_wall",
+   "x": 97.5,
+   "y": 72.5,
+   "w": 5,
+   "h": 3.125
+  },
+  {
+   "kind": "city_gate",
+   "x": 30,
+   "y": 10,
+   "w": 10,
+   "h": 7.5,
+   "opening": 5
+  },
+  {
+   "kind": "city_gate",
+   "x": 55,
+   "y": 73.75,
+   "w": 11.25,
+   "h": 8.75,
+   "opening": 6.25
+  },
+  {
+   "kind": "city_gate",
+   "x": 1.25,
+   "y": 42.5,
+   "w": 10,
+   "h": 8.75,
+   "opening": 5
+  },
+  {
+   "kind": "city_gate",
+   "x": 107.5,
+   "y": 42.5,
+   "w": 10,
+   "h": 8.75,
+   "opening": 5
+  },
+  {
+   "kind": "bridge_ew",
+   "x": 45,
+   "y": 42.5,
+   "w": 8.75,
+   "h": 5,
+   "depth": -8
+  },
+  {
+   "kind": "bridge_ew",
+   "x": 70,
+   "y": 42.5,
+   "w": 8.75,
+   "h": 5,
+   "depth": -8
+  },
+  {
+   "kind": "bridge_ew",
+   "x": 91.25,
+   "y": 60,
+   "w": 8.75,
+   "h": 5,
+   "depth": -8
+  },
+  {
+   "kind": "bridge_ns",
+   "x": 56.25,
+   "y": 36.25,
+   "w": 8.75,
+   "h": 7.5,
+   "depth": -8
+  },
+  {
+   "kind": "bridge_ns",
+   "x": 56.25,
+   "y": 61.25,
+   "w": 8.75,
+   "h": 7.5,
+   "depth": -8
+  }
+ ]
 }

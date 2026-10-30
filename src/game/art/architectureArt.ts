@@ -3,7 +3,8 @@ import castleUrl from '../../assets/environment/architecture-castles.png';
 import type { PlacedBuilding } from '../../core/mapCompiler';
 import { TILE } from '../../core/mapCompiler';
 import { makeCanvas } from './canvas';
-import { architectureTheme, ARCHITECTURE_STYLES, BUILDING_COLUMNS, BUILDING_ROWS_BY_COLUMN, CASTLE_COLUMNS, CASTLE_ROWS, type ArchitecturePart } from './architectureManifest';
+import { architectureTheme, ARCHITECTURE_ALIASES, ARCHITECTURE_STYLES, BUILDING_COLUMNS, BUILDING_ROWS_BY_COLUMN, CASTLE_COLUMNS, CASTLE_ROWS, type ArchitecturePart } from './architectureManifest';
+import { aurelionFrame, AURELION_BUILDINGS, loadAurelionArt } from './aurelionArt';
 
 let buildings: HTMLImageElement | undefined, castles: HTMLImageElement | undefined;
 let loading: Promise<void> | undefined;
@@ -13,12 +14,14 @@ export function loadArchitectureArt(): Promise<void> {
   return loading ??= Promise.all([buildingUrl, castleUrl].map(url => new Promise<HTMLImageElement>((resolve, reject) => {
     const image = new Image(); image.onload = () => resolve(image);
     image.onerror = () => reject(new Error(`Architecture atlas could not load: ${url}`)); image.src = url;
-  }))).then(([a, b]) => { buildings = a; castles = b; });
+  }))).then(async ([a, b]) => { buildings = a; castles = b; await loadAurelionArt(); });
 }
 
 /** Trim a complete sprite within its reviewed frame; every chimney stays intact. */
 export function architectureFrame(theme: string, style: string): HTMLCanvasElement | null {
   if (!buildings || !castles) return null;
+  if(AURELION_BUILDINGS[style]!=null)return aurelionFrame(AURELION_BUILDINGS[style]);
+  const alias=ARCHITECTURE_ALIASES[style];if(alias){theme=alias.theme;style=alias.style;}
   const row = architectureTheme(theme), column = ARCHITECTURE_STYLES.indexOf(style as typeof ARCHITECTURE_STYLES[number]);
   const part = (['castle', 'gate', 'wall'] as string[]).indexOf(style);
   const key = `${row}:${style}`;

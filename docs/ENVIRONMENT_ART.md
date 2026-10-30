@@ -25,7 +25,7 @@ source-image wrap, and sampling stays aligned to world coordinates across all
 chunks. These 64 tiles form a connected layout: do not shuffle/rotate them
 independently in a different map editor without an equivalent edge system.
 
-Ten ground materials are supported. Eight-neighbour masks feather grass, earth,
+Eleven ground materials are supported, including walkable wooden harbor planks. Eight-neighbour masks feather grass, earth,
 stone and shores with both diagonal corners and cardinal edges. Material order
 is explicit; visual blending never changes walkability. Masks and sampled edge
 tiles are cached with bounded edge-cache size. No sprite bounds change collision.
@@ -83,3 +83,5 @@ Screenshots provide the visual review for representative scenes of every theme.
 inline CSS and base64 image data. The downloadable ZIP uses this build so opening
 `file://.../index.html` does not request module scripts or cross-origin stylesheets.
 The regular hosted build remains available with `npm run build`.
+
+The concept-based Aurelion adds two dedicated masters for the grand palace and canal-city objects. See [Aurelion concept](AURELION_CONCEPT.md).

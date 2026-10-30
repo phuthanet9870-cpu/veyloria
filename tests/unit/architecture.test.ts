@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { loadGameData } from '../../src/core/data';
 import { compileMap } from '../../src/core/mapCompiler';
 import { EMPERIUM_POS } from '../../src/net/protocol';
-import { ARCHITECTURE_CAMERA, ARCHITECTURE_STYLES, ARCHITECTURE_THEMES, architectureTheme } from '../../src/game/art/architectureManifest';
+import { ARCHITECTURE_CAMERA, ARCHITECTURE_STYLES, ARCHITECTURE_THEMES, EXTRA_ARCHITECTURE_STYLES, architectureTheme } from '../../src/game/art/architectureManifest';
 
 describe('front-facing architecture', () => {
   const data = loadGameData();
@@ -14,7 +14,7 @@ describe('front-facing architecture', () => {
     for (const def of data.maps.values()) {
       const map = compileMap(data, def);
       for (const b of map.buildings) {
-        expect([...ARCHITECTURE_STYLES, 'castle']).toContain(b.style);
+        expect([...ARCHITECTURE_STYLES, ...EXTRA_ARCHITECTURE_STYLES, 'castle']).toContain(b.style);
         expect(b.x).toBeGreaterThanOrEqual(0); expect(b.y).toBeGreaterThanOrEqual(0);
         expect(b.x + b.w).toBeLessThanOrEqual(map.width); expect(b.y + b.h).toBeLessThanOrEqual(map.height);
         themes.add(architectureTheme(def.tileset)); buildings++;

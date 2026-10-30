@@ -5,6 +5,7 @@ import type { ObjectKindDef } from '../../core/types';
 import { ENVIRONMENT_THEMES, terrainSource } from './environmentManifest';
 import { hexToRgb, makeCanvas } from './canvas';
 import { loadArchitectureArt } from './architectureArt';
+import { paintAurelionObject } from './aurelionArt';
 
 export const ENVIRONMENT_SURFACE_SIZE = 256;
 
@@ -50,7 +51,7 @@ export function environmentSurface(theme: string, material: string, palette: Rec
   const c = cell(terrain, terrainSource(theme, material), 3);
   ctx.drawImage(terrain, c.x, c.y, c.w, c.h, 0, 0, 256, 256);
   const src = ctx.getImageData(0, 0, 256, 256), dst = ctx.createImageData(256, 256);
-  const color = material === 'water' ? palette.water1 : material === 'sand' ? palette.sand1 : material === 'dirt' ? palette.dirt1 : material === 'soil' ? palette.soil1 ?? palette.dirt2 : material === 'path_stone' || material === 'ruin_floor' ? palette.stone1 : palette.grass1;
+  const color = material === 'wood_plank' ? palette.trunk : material === 'water' ? palette.water1 : material === 'sand' ? palette.sand1 : material === 'dirt' ? palette.dirt1 : material === 'soil' ? palette.soil1 ?? palette.dirt2 : material === 'path_stone' || material === 'ruin_floor' ? palette.stone1 : palette.grass1;
   const rgb = hexToRgb(color), tint = theme === 'arcane' || theme === 'swamp' ? 0.24 : 0.10;
   for (let y = 0; y < 256; y++) for (let x = 0; x < 256; x++) {
     const wx = (1 - Math.cos(2 * Math.PI * x / 256)) / 2, wy = (1 - Math.cos(2 * Math.PI * y / 256)) / 2;
@@ -84,6 +85,7 @@ function propIndex(theme: string, draw: string): number | null {
 }
 
 export function paintEnvironmentObject(kind: ObjectKindDef, theme: string, variant: number): HTMLCanvasElement | null {
+  const capitalObject=paintAurelionObject(kind);if(capitalObject)return capitalObject;
   if (!props || !common) return null;
   const index = propIndex(theme, kind.draw); if (index == null) return null;
   let sprite = sprites.get(index);

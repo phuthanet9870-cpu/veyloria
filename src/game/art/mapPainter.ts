@@ -72,6 +72,11 @@ function drawGround(ctx: CanvasRenderingContext2D, id: string, ox: number, oy: n
       speckle(ctx, ox, oy, r, [shade(pal.sand1, -0.08), shade(pal.sand1, 0.1)], 30, 1);
       break;
     }
+    case 'wood_plank': {
+      px(ctx,ox,oy,T,T,pal.trunk);
+      for(let y=0;y<T;y+=8){px(ctx,ox,oy+y,T,1,shade(pal.trunk,-0.3));px(ctx,ox+2,oy+y+2,T-4,1,shade(pal.trunk,0.2));}
+      break;
+    }
     case 'water': {
       px(ctx, ox, oy, T, T, pal.water1);
       for (let i = 0; i < 4; i++) { const x = ox + Math.floor(r() * 24), y = oy + Math.floor(r() * 30); px(ctx, x, y, 6, 1, pal.water2); }
@@ -147,7 +152,7 @@ function drawWall(ctx: CanvasRenderingContext2D, id: string, ox: number, oy: num
     case 'ruin_wall':
       px(ctx, ox, oy + 2, T, T - 2, pal.ruin2 ?? pal.stone2);
       for (let y = 4; y < T; y += 8) px(ctx, ox + 1, oy + y, T - 2, 6, y % 16 ? pal.ruin1 ?? pal.stone1 : shade(pal.ruin1 ?? pal.stone1, -0.08));
-      speckle(ctx, ox, oy, r, [shade(pal.grass3, -0.1)], 6, 2);
+      speckle(ctx, ox, oy, r, [shade(map.def.id==='aurelion'?pal.stone2:pal.grass3, -0.1)], 6, 2);
       break;
   }
 }
@@ -236,6 +241,7 @@ export function paintWallLayer(map: CompiledMap, pal: Palette, region?: Region):
   const { canvas, ctx, x0, y0, x1, y1 } = regionCanvas(map, region);
   for (let y = y0; y < y1; y++) for (let x = x0; x < x1; x++) {
     const w = map.wall[y * map.width + x];
+    if(map.def.id==='aurelion'&&map.ground[y*map.width+x]==='water'&&(x<2||y<2||x>=map.width-2||y>=map.height-2))continue;
     if (w) drawWall(ctx, w, x * T, y * T, pal, cellSeed(x, y, 5), map, x, y);
   }
   return canvas;

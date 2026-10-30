@@ -13,12 +13,13 @@ export const ENVIRONMENT_THEMES: Record<string, { terrain: number; prop: number 
   dg_crypt: { terrain: 18, prop: 18 },
 };
 
-export const GROUND_MATERIALS = ['grass', 'grass_dark', 'forest_floor', 'dirt', 'soil', 'path_stone', 'ruin_floor', 'sand', 'water', 'thorn_ground'] as const;
+export const GROUND_MATERIALS = ['grass', 'grass_dark', 'forest_floor', 'dirt', 'soil', 'path_stone', 'ruin_floor', 'sand', 'water', 'thorn_ground', 'wood_plank'] as const;
 
 /** Lower priority materials feather into higher ones, never changing collision. */
 export const MATERIAL_PRIORITY: Record<string, number> = {
   grass: 0, grass_dark: 1, forest_floor: 2, thorn_ground: 3, sand: 4,
   soil: 5, dirt: 6, path_stone: 7, ruin_floor: 8, water: 9,
+  wood_plank: 8,
 };
 
 /** Safe grid lookup: a horizontal neighbour must never wrap to the next row. */
@@ -27,6 +28,7 @@ export function layerAt(layer: readonly (string | null)[], width: number, height
 }
 
 export function terrainSource(theme: string, material: string): number {
+  if (material === 'wood_plank') return 20;
   const base = ENVIRONMENT_THEMES[theme]?.terrain ?? 0;
   if (material === 'water') return theme === 'volcano' || theme === 'dg_magma' ? 17 : theme === 'snow' || theme === 'dg_ice' ? 16 : theme === 'swamp' ? 9 : 6;
   if (material === 'sand') return 5;

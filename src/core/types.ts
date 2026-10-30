@@ -419,6 +419,9 @@ export interface MapDef {
   width: number;
   height: number;
   tileset: string;
+  /** Authored visual parts anchored by left x / bottom y, in world tile units.
+   * Walkability is defined by paint, never by these decorative overlays. */
+  scenery?: { kind: string; x: number; y: number; w: number; h: number; opening?: number; depth?: number }[];
   base: string;
   border: { kind: string; thickness: number };
   bgm: string;
@@ -433,7 +436,7 @@ export interface MapDef {
   monsterSpawns: MonsterSpawnDef[];
   bossSpawn?: { bossId: string; x: number; y: number; respawnSeconds: number };
   objects: MapObjectDef[];
-  areas: { id: string; name: string; rect: Rect }[];
+  areas: { id: string; name: string; rect: Rect; label?: { x: number; y: number } }[];
 }
 
 export interface TileDef {

@@ -9,6 +9,8 @@
 import { readFileSync, writeFileSync, readdirSync, unlinkSync } from 'node:fs';
 import { join } from 'node:path';
 import { layoutTown, npcRole, type Plan, type Side } from './town-layout';
+import { buildAurelionConcept } from '../../src/data/aurelionConcept';
+import type { MapDef } from '../../src/core/types';
 
 const DATA = join(process.cwd(), 'src/data');
 const read = (f: string) => JSON.parse(readFileSync(join(DATA, f), 'utf8'));
@@ -1014,6 +1016,8 @@ export async function main() {
   }
 
   // Portal labels from target names.
+  const capital=built.find(b=>b.map.id==='aurelion');
+  if(capital)capital.map=buildAurelionConcept(capital.map as MapDef) as unknown as J;
   const allMaps: J[] = [...Object.values(hand), ...built.map((b) => b.map)];
   for (const m of allMaps) for (const p of m.portals) if (m.type !== 'instance') p.label = MAP_NAME[p.targetMap] ?? p.label;
   // Make every portal's target spawn exist (two-way links).

@@ -39,7 +39,7 @@ export interface CompiledMap {
 }
 
 const NATURAL_GROUND = new Set(['grass', 'grass_dark', 'forest_floor']);
-const NO_DECO_GROUND = new Set(['dirt', 'path_stone', 'ruin_floor', 'water', 'sand', 'soil']);
+const NO_DECO_GROUND = new Set(['dirt', 'path_stone', 'ruin_floor', 'water', 'sand', 'soil', 'wood_plank']);
 
 export function compileMap(data: GameData, def: MapDef): CompiledMap {
   const W = def.width, H = def.height, N = W * H;
