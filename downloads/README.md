@@ -1,8 +1,22 @@
+# รุ่นล่าสุด: บ้าน เมือง ร้านค้า และปราสาท มุมหน้าตรง 45°
+
+- [ดาวน์โหลดเกม](https://github.com/phuthanet9870-cpu/veyloria/raw/refs/heads/downloads/map-art-2026-10-30/downloads/Veyloria-Architecture-45deg.zip)
+- [ดาวน์โหลดเฉพาะชุดภาพอาคาร 56 ชิ้น](https://github.com/phuthanet9870-cpu/veyloria/raw/refs/heads/downloads/map-art-2026-10-30/downloads/Veyloria-Architecture-Assets.zip)
+- [ภาพตัวอย่างในเกม](Architecture-Preview.png)
+
+อาคารหันหน้าตรงทางทิศใต้ มุมก้ม 45 องศา ไม่มีการหมุนหรือกลับภาพ ครบ 7 ธีมเมือง
+แทนภาพอาคาร 132 หลัง และเพิ่ม keep ใน Castle Veyl รวม 133 หลัง พร้อมประตู/กำแพงที่รักษาทางเดินเดิม
+
+ตรวจ 140 กรอบภาพ; unit/integration ผ่าน 1,057 ข้อ; browser gameplay 39/39
+เกมยังเป็น index.html ไฟล์เดียว ให้แตก ZIP ในโฟลเดอร์ใหม่แล้วเปิด index.html
+
+---
+
 # ดาวน์โหลด Veyloria — ภาพแมพใหม่
 
 ภาพใหม่ครบ 136 แมพ / 21 ธีม พร้อมพื้น 64 รูปแบบต่อวัสดุ
 
-- [ดาวน์โหลดเกม](https://github.com/phuthanet9870-cpu/veyloria/raw/refs/heads/downloads/map-art-2026-10-30/downloads/Veyloria-Maps-Fixed.zip)
+- [ดาวน์โหลดเกม](https://github.com/phuthanet9870-cpu/veyloria/raw/refs/heads/downloads/map-art-2026-10-30/downloads/Veyloria-Architecture-45deg.zip)
 - [ดาวน์โหลด Tileset และ Assets](https://github.com/phuthanet9870-cpu/veyloria/raw/refs/heads/downloads/map-art-2026-10-30/downloads/Veyloria-Tilesets-Assets.zip)
 - [ดาวน์โหลดซอร์สโค้ด](https://github.com/phuthanet9870-cpu/veyloria/raw/refs/heads/downloads/map-art-2026-10-30/downloads/Veyloria-Source-Updated.zip)
 - [ดาวน์โหลดภาพและผลตรวจ](https://github.com/phuthanet9870-cpu/veyloria/raw/refs/heads/downloads/map-art-2026-10-30/downloads/Veyloria-Map-QA.zip)

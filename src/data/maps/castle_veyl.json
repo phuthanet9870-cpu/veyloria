@@ -20,6 +20,16 @@
  },
  "paint": [
   {
+   "op": "building",
+   "x": 18,
+   "y": 3,
+   "w": 5,
+   "h": 4,
+   "style": "castle",
+   "door": 2,
+   "sign": "Castle Veyl"
+  },
+  {
    "op": "rect",
    "tile": "ruin_wall",
    "layer": "wall",

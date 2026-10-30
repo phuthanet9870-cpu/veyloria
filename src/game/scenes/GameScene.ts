@@ -2,6 +2,7 @@
 // commands. All game rules live in src/core; this scene only draws them.
 import { homunStats } from '../../core/homunculus';
 import Phaser from 'phaser';
+import { paintArchitecturePart } from '../art/architectureArt';
 import type { World, WorldEvent, MonsterActor, AnimState } from '../../core/world';
 import { TILE } from '../../core/mapCompiler';
 import type { Direction } from '../../core/types';
@@ -233,6 +234,22 @@ export class GameScene extends Phaser.Scene {
       const img = this.add.image(b.x * TILE - 4, (b.y + b.h) * TILE + 4, tex.buildings[i]).setOrigin(0, 1).setDepth((b.y + b.h) * TILE - 2);
       this.track(img);
     });
+
+    if (map.def.id === 'castle_veyl') {
+      // Art is anchored on the existing blocked wall cells. The four-cell
+      // central approach to the Emperium remains open and keeps its collision.
+      const kit = (part: 'wall' | 'gate', x: number, width: number, height: number, opening?: number) => {
+        const key = `architecture_capital_${part}_${width}_${height}`;
+        if (!this.textures.exists(key)) {
+          const canvas = paintArchitecturePart('capital', part, width, height, opening);
+          if (!canvas) throw new Error(`Missing castle ${part} artwork`);
+          this.textures.addCanvas(key, canvas);
+        }
+        this.track(this.add.image(x * TILE - 4, 15 * TILE + 4, key).setOrigin(0, 1).setDepth(15 * TILE - (part === 'gate' ? 1 : 2)));
+      };
+      for (const x of [6, 10, 14, 22, 26, 30]) kit('wall', x, 4 * TILE, 3 * TILE);
+      kit('gate', 17, 6 * TILE, 5 * TILE, 4 * TILE);
+    }
 
     // Portals
     for (const p of map.def.portals) {

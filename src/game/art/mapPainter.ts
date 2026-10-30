@@ -7,6 +7,7 @@ import type { ObjectKindDef } from '../../core/types';
 import { ellipse, makeCanvas, noise, px, shade } from './canvas';
 import { drawEnvironmentGround, environmentSurface } from './environmentArt';
 import { layerAt, MATERIAL_PRIORITY } from './environmentManifest';
+import { paintArchitectureBuilding } from './architectureArt';
 
 export type Palette = Record<string, string>;
 const T = TILE;
@@ -414,7 +415,9 @@ const ROOF: Record<string, { roof: string; wall: string; trim: string }> = {
   house: { roof: '#9a6a3a', wall: '#e8dcc0', trim: '#6a4a2a' },
 };
 
-export function paintBuilding(b: PlacedBuilding, pal?: Palette): HTMLCanvasElement {
+export function paintBuilding(b: PlacedBuilding, pal?: Palette, theme = 'willowbrook'): HTMLCanvasElement {
+  const artwork = paintArchitectureBuilding(b, theme);
+  if (artwork) return artwork;
   const original = ROOF[b.style] ?? ROOF.house;
   const style = pal ? { roof: pal.leaf1, wall: pal.stone1, trim: pal.trunk } : original;
   const w = b.w * T, wallH = 2 * T, roofExtra = 18;

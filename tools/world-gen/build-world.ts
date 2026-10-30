@@ -859,6 +859,7 @@ export async function main() {
   ] as const) {
     const paint: J[] = [];
     if (id === 'castle_veyl') {
+      paint.push({ op: 'building', x: 18, y: 3, w: 5, h: 4, style: 'castle', door: 2, sign: 'Castle Veyl' });
       paint.push({ op: 'rect', tile: 'ruin_wall', layer: 'wall', x: 6, y: 14, w: 12, h: 1 }, { op: 'rect', tile: 'ruin_wall', layer: 'wall', x: 22, y: 14, w: 12, h: 1 });
       for (const x of [10, 16, 24, 30]) paint.push({ op: 'object', kind: 'ruin_pillar', x, y: 6 });
     } else for (const [x, y] of [[8, 7], [27, 7], [8, 20], [27, 20]]) paint.push({ op: 'object', kind: 'ruin_pillar', x, y });

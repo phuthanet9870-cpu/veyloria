@@ -3,7 +3,7 @@
 The environment renderer uses three generated PNG source atlases in
 `src/assets/environment/`: `terrain-source.png` (21 surfaces),
 `props-source.png` (21 regional props) and `common-source.png` (12 shared props).
-These are original generated fantasy RPG artwork, created for this project.
+These are original generated fantasy RPG artwork, created for this project. Two additional architecture atlases cover houses, town services and castle kits; see [architecture art](ARCHITECTURE_ART.md).
 Characters, icons, effects and audio retain their existing procedural pipeline.
 
 ## Theme coverage
@@ -42,8 +42,7 @@ trimmed by alpha, fitted into the original sprite dimensions with transparent
 padding, and bottom aligned. Eight deterministic size/mirroring combinations
 vary the repeated objects (signs keep their reading direction). All 23 physical
 object draw types use the image pipeline; the `glint` light effect remains
-procedural. Existing buildings are palette themed, with procedural geometry
-preserving their doors and footprints.
+procedural. Buildings use the front-facing 45-degree image pipeline, preserving their established bottom anchors and town footprints.
 
 The source atlases are not directly interchangeable uniform sprite sheets.
 Use `paintEnvironmentObject` and the manifest for normalized runtime sprites.

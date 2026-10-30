@@ -4,6 +4,7 @@ import commonUrl from '../../assets/environment/common-source.png';
 import type { ObjectKindDef } from '../../core/types';
 import { ENVIRONMENT_THEMES, terrainSource } from './environmentManifest';
 import { hexToRgb, makeCanvas } from './canvas';
+import { loadArchitectureArt } from './architectureArt';
 
 export const ENVIRONMENT_SURFACE_SIZE = 256;
 
@@ -19,7 +20,7 @@ export function loadEnvironmentArt(): Promise<void> {
   return loading ??= Promise.all([terrainUrl, propsUrl, commonUrl].map(url => new Promise<HTMLImageElement>((resolve, reject) => {
     const img = new Image(); img.onload = () => resolve(img);
     img.onerror = () => reject(new Error(`Environment artwork could not load: ${url}`)); img.src = url;
-  }))).then(([a, b, c]) => { terrain = a; props = b; common = c; });
+  }))).then(async ([a, b, c]) => { terrain = a; props = b; common = c; await loadArchitectureArt(); });
 }
 
 function cell(image: HTMLImageElement, index: number, inset = 0) {

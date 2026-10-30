@@ -3,6 +3,7 @@
 A 2D fantasy MMORPG with a top-down 3/4 view. It's built with TypeScript, Phaser 3 (WebGL), HTML/CSS UI and Vite.
 
 > **Status: Phase 1 (Playable Game Foundation): done and tested in single-player development mode.**
+> **Architecture:** houses, inns, shops, smithies, guild halls and castle kits use one front-facing camera at 45° elevation across all seven towns. See [architecture artwork](docs/ARCHITECTURE_ART.md).
 > **Environment art:** all 136 maps use generated terrain and prop atlases across 21 themes, with connected tile variants and automatic edge blending. Characters, icons, effects and audio remain procedural. See [environment artwork](docs/ENVIRONMENT_ART.md).
 > Online play includes a prototype WebSocket server; characters and inventory are still client-owned.
 

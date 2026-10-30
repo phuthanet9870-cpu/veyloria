@@ -57,7 +57,7 @@ export function ensureMapTextures(scene: Phaser.Scene, data: GameData, map: Comp
     const key = add(`obj_${map.def.tileset}_${o.kind}_${variant}`, () => paintEnvironmentObject(kind, map.def.tileset, variant) ?? paintObject(kind, pal, 1000 + variant * 77 + hashString(o.kind)));
     objects.set(o.uid, key);
   }
-  const buildings = map.buildings.map((b, i) => add(`map_${id}_bld${i}`, () => paintBuilding(b, pal)));
+  const buildings = map.buildings.map((b, i) => add(`map_${id}_bld${i}`, () => paintBuilding(b, pal, map.def.tileset)));
   return { objects, buildings };
 }
 
