@@ -46,6 +46,7 @@ npm install          # install dependencies
 npm run dev          # dev server → http://localhost:5173
 npm run build        # type-check + production build into dist/
 npm run preview      # serve the production build → http://localhost:4173
+npm run build:standalone # self-contained dist-standalone/index.html; double-click to play
 ```
 
 ### Tests
@@ -225,3 +226,16 @@ Second jobs and their skill trees, gear tiers for the Lv 40–85 regions with bo
 
 ## Credits & licensing
 All code, data, procedural art and synthesized audio in this repository are original. The game is inspired by classic MMORPGs, but it doesn't use any characters, art, maps or sounds from other games.
+
+## Downloaded game: opening without a server
+
+The downloadable ZIP uses a self-contained `index.html` with inline classic JavaScript,
+CSS and data-URL artwork. Extract the ZIP and double-click `index.html`. Do not mix
+it with the previous `assets/` folder. The normal `npm run build` output still targets
+HTTP hosting; generate direct-open downloads with `npm run build:standalone`.
+
+Run `npm run test:standalone` with Playwright to check a direct `file://` launch.
+In managed browsers where administrator policy blocks all `file://` navigation,
+`STANDALONE_TEST_MODE=http` validates embedded assets, all 21 themes, movement and
+save/reload over a local document URL, with asset networking disabled. This mode
+does not establish a successful direct file launch.

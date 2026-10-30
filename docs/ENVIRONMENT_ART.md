@@ -77,3 +77,10 @@ manifest mutation is performed by the test runner.
 Pixel equality verifies chunk composition and opaque ground; it does not prove
 that every gameplay view or decorative silhouette has been manually reviewed.
 Screenshots provide the visual review for representative scenes of every theme.
+
+## Direct-open distribution
+
+`npm run build:standalone` produces a single HTML file containing an IIFE script,
+inline CSS and base64 image data. The downloadable ZIP uses this build so opening
+`file://.../index.html` does not request module scripts or cross-origin stylesheets.
+The regular hosted build remains available with `npm run build`.

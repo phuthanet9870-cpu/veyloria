@@ -19,7 +19,9 @@
     "server": "node scripts/run-ts.mjs ./server/main.ts",
     "typecheck:server": "tsc --noEmit -p server",
     "test:online": "npm run build && node tests/e2e/online-e2e.mjs",
-    "test:maps": "node tests/e2e/environment-art.mjs"
+    "test:maps": "node tests/e2e/environment-art.mjs",
+    "build:standalone": "tsc --noEmit && tsc --noEmit -p server && node scripts/build-standalone.mjs",
+    "test:standalone": "npm run build:standalone && node tests/e2e/standalone.mjs"
   },
   "license": "UNLICENSED",
   "dependencies": {

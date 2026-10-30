@@ -5,3 +5,5 @@ coverage/
 tests/e2e/screenshots/
 tests/scratch/
 server-data/
+
+dist-standalone/
