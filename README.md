@@ -3,8 +3,8 @@
 A 2D fantasy MMORPG with a top-down 3/4 view. It's built with TypeScript, Phaser 3 (WebGL), HTML/CSS UI and Vite.
 
 > **Status: Phase 1 (Playable Game Foundation): done and tested in single-player development mode.**
-> All art and audio are **procedural**: the game draws every sprite, tile, icon and sound itself. There are no image or sprite-sheet files.
-> Online play (accounts, server, party, guild, trading) is planned for Phase 3 and isn't built yet.
+> **Environment art:** all 136 maps use generated terrain and prop atlases across 21 themes, with connected tile variants and automatic edge blending. Characters, icons, effects and audio remain procedural. See [environment artwork](docs/ENVIRONMENT_ART.md).
+> Online play includes a prototype WebSocket server; characters and inventory are still client-owned.
 
 ## ภาพรวม (Thai summary)
 - **เปลี่ยนภาษาได้ อังกฤษ / ไทย** ที่มุมขวาบนของหน้าแรก หรือ ตั้งค่า → ภาษา ในเกม (ชื่อไอเทม มอนสเตอร์ สกิล แผนที่ คงเป็นภาษาอังกฤษ)
@@ -32,7 +32,7 @@ A 2D fantasy MMORPG with a top-down 3/4 view. It's built with TypeScript, Phaser
   - ดูรายละเอียดที่ [docs/RO_SYSTEMS.md](docs/RO_SYSTEMS.md)
 - **ระบบตีบวก +1 ถึง +10:** อาวุธตีได้ปลอดภัยถึง +5 และชุดเกราะถึง +4 ถ้าเกินจากนั้นแล้วตีพลาด ของจะแตก
 - ระบบที่ทำเสร็จแล้ว ได้แก่ การเดิน (คลิกเมาส์/WASD), กล้องติดตาม, Collision ที่ตรงกับภาพ, NPC/บทสนทนา, Monster AI แบบ State Machine, การต่อสู้แบบ Real-time พร้อมธาตุและ Status, EXP/เลเวล (Base และ Job), Stat Points, Inventory/Equipment, สกิลและ Hotbar, เควสต์ 17 เควสต์, ร้านค้า, คลังเก็บของ, การเซฟ/โหลดแบบมีเวอร์ชัน, เสียง และ UI ครบชุดสำหรับ Phase 1
-- ภาพและเสียงทั้งหมด **เกมวาดและสร้างเองตอนรัน** (ต้นฉบับทั้งหมด) ไม่มีไฟล์ภาพ sprite sheet หรือไฟล์ animation ในโปรเจกต์
+- **ภาพแผนที่ใหม่ครบ 136 แมพ / 21 ธีม** ใช้ภาพพื้นและวัตถุที่สร้างขึ้นสำหรับเกม มีพื้น 8 รูปแบบต่อวัสดุและขอบผสมอัตโนมัติ ส่วนตัวละคร เอฟเฟกต์ ไอคอน และเสียงยังสร้างด้วยโค้ดขณะรัน
 - ระบบออนไลน์ยังไม่ได้ทำ (อยู่ใน Phase 3)
 
 ---
@@ -54,6 +54,7 @@ npm test                 # all unit + integration tests (Vitest)
 npm run test:unit        # unit tests only
 npm run test:integration # headless playthrough + class balance tests
 npm run test:e2e         # builds, then drives the real game in Chromium (Playwright)
+npm run test:maps        # all-map chunk seams, coverage and theme screenshots
 ```
 `test:e2e` uses Playwright's Chromium. If it isn't installed: `npx playwright install chromium`.
 

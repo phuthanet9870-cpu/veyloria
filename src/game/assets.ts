@@ -1,5 +1,4 @@
-// Texture registry. Every sprite, map layer and icon the game uses is drawn
-// procedurally at runtime (./art); there are no image files.
+// Texture registry: generated environment atlases and procedural characters/FX.
 import Phaser from 'phaser';
 import type { GameData } from '../core/data';
 import type { CompiledMap } from '../core/mapCompiler';
@@ -12,6 +11,7 @@ import { hashString } from '../core/rng';
 import { makeCanvas, ellipse } from './art/canvas';
 import { itemIconCanvas } from './art/icons';
 import type { ItemDef } from '../core/types';
+import { paintEnvironmentObject } from './art/environmentArt';
 
 function addCanvasSheet(scene: Phaser.Scene, key: string, canvas: HTMLCanvasElement, fw: number, fh: number, cols: number, rows: number) {
   if (scene.textures.exists(key)) scene.textures.remove(key);
@@ -53,11 +53,11 @@ export function ensureMapTextures(scene: Phaser.Scene, data: GameData, map: Comp
   const objects = new Map<string, string>();
   for (const o of map.objects) {
     const kind = data.objectKinds.get(o.kind)!;
-    const variant = kind.id.startsWith('tree') ? (o.x * 7 + o.y * 13) % 3 : 0;
-    const key = add(`obj_${map.def.tileset}_${o.kind}_${variant}`, () => paintObject(kind, pal, 1000 + variant * 77 + hashString(o.kind)));
+    const variant = ((o.x * 7 + o.y * 13) >>> 0) % 8;
+    const key = add(`obj_${map.def.tileset}_${o.kind}_${variant}`, () => paintEnvironmentObject(kind, map.def.tileset, variant) ?? paintObject(kind, pal, 1000 + variant * 77 + hashString(o.kind)));
     objects.set(o.uid, key);
   }
-  const buildings = map.buildings.map((b, i) => add(`map_${id}_bld${i}`, () => paintBuilding(b)));
+  const buildings = map.buildings.map((b, i) => add(`map_${id}_bld${i}`, () => paintBuilding(b, pal)));
   return { objects, buildings };
 }
 
@@ -122,7 +122,7 @@ export function ensureFxTextures(scene: Phaser.Scene) {
 
 /** Gravestone texture for MVP tombstones. */
 export function ensureTombstoneTexture(scene: Phaser.Scene, data: GameData, tileset: string): string {
-  const key = 'obj_mvp_tombstone';
+  const key = `obj_mvp_tombstone_${tileset}`;
   if (!scene.textures.exists(key)) {
     const kind = data.objectKinds.get('gravestone')!;
     scene.textures.addCanvas(key, paintObject(kind, data.tilesets.get(tileset)!.palette, 4242));

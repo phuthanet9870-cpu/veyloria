@@ -2,7 +2,7 @@
   "name": "veyloria-online",
   "version": "0.1.0",
   "private": true,
-  "description": "Veyloria Online \u2014 2D Fantasy MMORPG (Phase 1: playable single-player foundation)",
+  "description": "Veyloria Online — 2D Fantasy MMORPG (Phase 1: playable single-player foundation)",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -18,7 +18,8 @@
     "jobs:build": "node scripts/run-ts.mjs ./tools/world-gen/build-jobs.ts",
     "server": "node scripts/run-ts.mjs ./server/main.ts",
     "typecheck:server": "tsc --noEmit -p server",
-    "test:online": "npm run build && node tests/e2e/online-e2e.mjs"
+    "test:online": "npm run build && node tests/e2e/online-e2e.mjs",
+    "test:maps": "node tests/e2e/environment-art.mjs"
   },
   "license": "UNLICENSED",
   "dependencies": {

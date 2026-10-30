@@ -19,9 +19,10 @@ src/core/   (pure TypeScript, no Phaser, no DOM)
         │  World.update(dt), World commands, WorldEvent stream
 src/game/   (Phaser 3 + WebGL)
   scenes/GameScene renders the World, turns mouse input into World commands
-  art/*            procedural placeholder art generators
+  art/*            generated environment atlas sampling + procedural character/FX art
   audio/audio.ts   WebAudio synth: BGM sequencer, ambience, SFX
-  assets.ts        texture registry; builds every texture procedurally
+  assets.ts        texture registry; normalized image props and chunked terrain
+  ../assets/environment/  generated terrain and prop source atlases
 src/ui/     (HTML/CSS overlay)
   app.ts           screen flow, save management, keybinds, GameHost bridge
   screens.ts       title / character select / character creation

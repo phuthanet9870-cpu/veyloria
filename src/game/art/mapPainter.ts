@@ -5,6 +5,8 @@ import type { CompiledMap, PlacedBuilding } from '../../core/mapCompiler';
 import { TILE } from '../../core/mapCompiler';
 import type { ObjectKindDef } from '../../core/types';
 import { ellipse, makeCanvas, noise, px, shade } from './canvas';
+import { drawEnvironmentGround, environmentSurface } from './environmentArt';
+import { layerAt, MATERIAL_PRIORITY } from './environmentManifest';
 
 export type Palette = Record<string, string>;
 const T = TILE;
@@ -130,7 +132,7 @@ function drawWall(ctx: CanvasRenderingContext2D, id: string, ox: number, oy: num
       speckle(ctx, ox, oy + 4, r, [shade(pal.thicket1, 0.2), pal.thicket2], 20, 2);
       break;
     case 'fence_h': {
-      const left = map.wall[cy * map.width + cx - 1] === 'fence_h', right = map.wall[cy * map.width + cx + 1] === 'fence_h';
+      const left = layerAt(map.wall, map.width, map.height, cx - 1, cy) === 'fence_h', right = layerAt(map.wall, map.width, map.height, cx + 1, cy) === 'fence_h';
       px(ctx, ox + (left ? 0 : 4), oy + 12, T - (left ? 0 : 4) - (right ? 0 : 4), 3, pal.fence);
       px(ctx, ox + (left ? 0 : 4), oy + 20, T - (left ? 0 : 4) - (right ? 0 : 4), 3, shade(pal.fence, -0.15));
       px(ctx, ox + 4, oy + 8, 4, 20, shade(pal.fence, 0.1)); px(ctx, ox + 24, oy + 8, 4, 20, shade(pal.fence, 0.1));
@@ -167,26 +169,65 @@ export function regionCanvas(map: CompiledMap, region?: Region) {
 export function paintGroundLayer(map: CompiledMap, pal: Palette, region?: Region): HTMLCanvasElement {
   const { canvas, ctx, x0, y0, x1, y1 } = regionCanvas(map, region);
   for (let y = y0; y < y1; y++) for (let x = x0; x < x1; x++) {
-    drawGround(ctx, map.ground[y * map.width + x], x * T, y * T, pal, cellSeed(x, y));
+    ctx.save(); ctx.beginPath(); ctx.rect(x * T, y * T, T, T); ctx.clip();
+    if (!drawEnvironmentGround(ctx, map.def.tileset, map.ground[y * map.width + x], x * T, y * T, pal)) {
+      drawGround(ctx, map.ground[y * map.width + x], x * T, y * T, pal, cellSeed(x, y));
+    }
+    ctx.restore();
   }
-  // Soft transitions: darken water edges, add path edge pebbles.
+  // Eight-neighbour feathering includes concave and convex corners; all lookups
+  // use map bounds rather than the current chunk, so cuts remain pixel-identical.
   for (let y = y0; y < y1; y++) for (let x = x0; x < x1; x++) {
     const id = map.ground[y * map.width + x];
-    const nb = (dx: number, dy: number) => map.ground[(y + dy) * map.width + (x + dx)];
-    if (id === 'water') {
-      if (nb(0, -1) && nb(0, -1) !== 'water') { px(ctx, x * T, y * T, T, 4, shade(pal.water1, -0.25)); px(ctx, x * T, y * T + 4, T, 1, pal.water2); }
-      if (nb(-1, 0) && nb(-1, 0) !== 'water') px(ctx, x * T, y * T, 2, T, shade(pal.water1, 0.25));
-      if (nb(1, 0) && nb(1, 0) !== 'water') px(ctx, x * T + T - 2, y * T, 2, T, shade(pal.water1, 0.25));
-      if (nb(0, 1) && nb(0, 1) !== 'water') px(ctx, x * T, y * T + T - 2, T, 2, shade(pal.water1, 0.3));
-    }
-    if ((id === 'dirt' || id === 'path_stone') && nb(0, -1) && ['grass', 'grass_dark', 'forest_floor'].includes(nb(0, -1))) {
-      const r = noise(cellSeed(x, y, 7));
-      for (let i = 0; i < 6; i++) px(ctx, x * T + Math.floor(r() * 30), y * T, 2, 2, shade(pal.grass3, -0.05));
+    const neighbours = new Map<string, number>();
+    DIRECTIONS.forEach(([dx, dy], bit) => {
+      const other = layerAt(map.ground, map.width, map.height, x + dx, y + dy);
+      if (other && MATERIAL_PRIORITY[other] < MATERIAL_PRIORITY[id]) neighbours.set(other, (neighbours.get(other) ?? 0) | (1 << bit));
+    });
+    for (const [other, mask] of neighbours) {
+      const surface = environmentSurface(map.def.tileset, other, pal);
+      if (surface) ctx.drawImage(transitionTile(surface, mask, x % 8, y % 8), x * T, y * T);
     }
     const d = map.deco[y * map.width + x];
-    if (d) drawDeco(ctx, d, x * T, y * T, pal, cellSeed(x, y, 3));
+    if (d) {
+      ctx.save(); ctx.beginPath(); ctx.rect(x * T, y * T, T, T); ctx.clip();
+      drawDeco(ctx, d, x * T, y * T, pal, cellSeed(x, y, 3)); ctx.restore();
+    }
   }
   return canvas;
+}
+
+const DIRECTIONS = [[0, -1], [1, 0], [0, 1], [-1, 0], [-1, -1], [1, -1], [1, 1], [-1, 1]];
+const transitionMasks = new Map<number, HTMLCanvasElement>();
+const transitionTiles = new WeakMap<HTMLCanvasElement, Map<number, HTMLCanvasElement>>();
+function transitionTile(surface: HTMLCanvasElement, mask: number, tx: number, ty: number): HTMLCanvasElement {
+  let cache = transitionTiles.get(surface);
+  if (!cache) { cache = new Map(); transitionTiles.set(surface, cache); }
+  const key = mask * 64 + ty * 8 + tx;
+  const found = cache.get(key); if (found) return found;
+  let alpha = transitionMasks.get(mask);
+  if (!alpha) {
+    const a = makeCanvas(T, T), image = a.ctx.createImageData(T, T);
+    for (let y = 0; y < T; y++) for (let x = 0; x < T; x++) {
+      let opacity = 0;
+      DIRECTIONS.forEach(([dx, dy], bit) => {
+        if (!(mask & (1 << bit))) return;
+        const xx = dx < 0 ? x : T - 1 - x, yy = dy < 0 ? y : T - 1 - y;
+        const distance = dx === 0 ? yy : dy === 0 ? xx : Math.hypot(xx, yy);
+        const along = dx === 0 ? x : y;
+        const width = 4.5 + Math.sin(along * Math.PI / 8) * 1.3;
+        opacity = Math.max(opacity, Math.max(0, 1 - distance / width));
+      });
+      const i = (y * T + x) * 4; image.data[i] = image.data[i + 1] = image.data[i + 2] = 255; image.data[i + 3] = Math.round(opacity * 255);
+    }
+    a.ctx.putImageData(image, 0, 0); alpha = a.canvas; transitionMasks.set(mask, alpha);
+  }
+  const { canvas, ctx } = makeCanvas(T, T);
+  ctx.drawImage(surface, tx * T, ty * T, T, T, 0, 0, T, T);
+  ctx.globalCompositeOperation = 'destination-in'; ctx.drawImage(alpha, 0, 0);
+  // Bound retained edge tiles while traversing many different biomes.
+  if (cache.size >= 512) cache.clear();
+  cache.set(key, canvas); return canvas;
 }
 
 /** Walls layer (fences, hedges, border thicket, ruins). */
@@ -373,11 +414,14 @@ const ROOF: Record<string, { roof: string; wall: string; trim: string }> = {
   house: { roof: '#9a6a3a', wall: '#e8dcc0', trim: '#6a4a2a' },
 };
 
-export function paintBuilding(b: PlacedBuilding): HTMLCanvasElement {
-  const style = ROOF[b.style] ?? ROOF.house;
+export function paintBuilding(b: PlacedBuilding, pal?: Palette): HTMLCanvasElement {
+  const original = ROOF[b.style] ?? ROOF.house;
+  const style = pal ? { roof: pal.leaf1, wall: pal.stone1, trim: pal.trunk } : original;
   const w = b.w * T, wallH = 2 * T, roofExtra = 18;
   const h = b.h * T + roofExtra;
-  const { canvas, ctx } = makeCanvas(w + 8, h + 4);
+  // Headroom keeps chimneys, flags and guild signs inside the source texture.
+  const { canvas, ctx } = makeCanvas(w + 8, h + 28);
+  ctx.translate(0, 24);
   const ox = 4, base = h;
   ellipse(ctx, ox + w / 2, base, w / 2 + 2, 6, 'rgba(0,0,0,0.25)');
   // Walls

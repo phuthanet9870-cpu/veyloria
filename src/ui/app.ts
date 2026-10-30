@@ -71,7 +71,7 @@ export class App implements GameHost {
   // ---------------------------------------------------------------- boot
   start() {
     const loading = h('div', { class: 'loading', id: 'loading' }, h('div', { class: 'logo', style: 'font-size:40px' }, 'VEYLORIA ONLINE'),
-      h('div', { class: 'bar' }, h('div', { class: 'fill' })), h('div', { class: 'muted' }, 'Forging placeholder artwork…'));
+      h('div', { class: 'bar' }, h('div', { class: 'fill' })), h('div', { class: 'muted' }, 'Loading Veyloria…'));
     this.uiRoot.appendChild(loading);
     window.addEventListener('veyloria:loading', (e) => {
       const p = (e as CustomEvent<number>).detail;
