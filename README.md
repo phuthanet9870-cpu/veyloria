@@ -136,10 +136,35 @@ Edits are saved in this browser (IndexedDB) and the game in the same browser use
 ## Online play (optional)
 
 ```
-npm run server        # ws://localhost:7171 (accounts & guilds saved in ./server-data)
+npm run server        # ws://localhost:7171 (accounts & guilds saved in ./server-data; `npm start` also serves the game)
 npm run dev           # then in the game: Social window (G) → server ws://localhost:7171 → Create account
 ```
 Chat: plain text = map, `/p` party, `/g` guild, `/gl` global, `/w name` whisper. The Arena Master in Aurelion warps to the Proving Grounds (PvP) and Castle Veyl (guild war, daily 20:00–21:00 server time; `npm run server -- --woe-always` keeps it open).
+
+## Play on the web with other players (hosting)
+
+One server serves the game page **and** the online features on the same port, so one URL is enough for everyone.
+
+```bash
+npm install
+npm start                      # builds the game, then serves http://localhost:7171
+```
+
+Open `http://localhost:7171`, press **Play**, create a character, then press **G** (Social). The server address is filled in with the page's own address, so just type an account name and password and press **Create account**.
+
+**Hosting it for real players** (any Docker host that gives you HTTPS, such as Render, Railway, Fly.io or a VPS):
+
+```bash
+docker build -t veyloria-online .
+docker run -p 7171:7171 -v veyloria-data:/data veyloria-online
+```
+
+- The container listens on `$PORT` (default 7171), serves the game on `/`, and reports `/healthz` for the host's health check.
+- Accounts, guilds and the Market Hall are written to `/data`; keep that volume so they survive a redeploy.
+- Browsers connect with `wss://` automatically when the page is served over HTTPS.
+- To enable server GM commands, set `VEYLORIA_ADMIN_TOKEN` to a secret value.
+
+**Honest limits (today):** characters, stats, inventory and the world itself still run in each player's browser (Phase 1 design). The server connects players for chat, presence, parties, trade, vending, PvP and guild war, but monsters, drops and kills are not shared between players and the server does not verify them. Making the world server-authoritative is the next big step.
 
 ## Screen layout, zoom, hotbar and Auto
 

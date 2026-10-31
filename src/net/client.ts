@@ -4,6 +4,13 @@
 // messages flow through here. Without a server the game stays single-player.
 import type { ClientMsg, ServerMsg } from './protocol';
 
+/** Where the game's server is, when the player doesn't type one: the page's own address when the game is
+ *  served by the Veyloria server (so one URL works on the web), or localhost for `npm run dev` / a file:// page. */
+export function defaultServerUrl(): string {
+  if (import.meta.env.DEV || typeof location === 'undefined' || !/^https?:$/.test(location.protocol)) return 'ws://localhost:7171';
+  return `${location.protocol === 'https:' ? 'wss' : 'ws'}://${location.host}`;
+}
+
 export type NetStatus = 'offline' | 'connecting' | 'connected' | 'authed';
 
 export class NetClient {

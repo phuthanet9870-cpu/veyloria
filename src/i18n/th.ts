@@ -426,7 +426,7 @@ const UI: Record<string, string> = {
 
   // ---------------------------------------------------------------- social / online
   'My shop': 'ร้านของฉัน',
-  'Online play needs a Veyloria server (run `npm run server` on your computer, then use ws://localhost:7171). Without one the game stays single-player. Characters and items stay on your own computer; the server only connects players, so it is not protected against cheating.': 'การเล่นออนไลน์ต้องมีเซิร์ฟเวอร์ Veyloria (รัน `npm run server` บนคอมพิวเตอร์ แล้วใช้ ws://localhost:7171) ถ้าไม่มีจะเล่นคนเดียว ตัวละครและไอเทมเก็บอยู่ในเครื่องของคุณ เซิร์ฟเวอร์แค่เชื่อมผู้เล่น จึงไม่ได้ป้องกันการโกง',
+  'Online play: the server also hosts this game, so use the address of the page you opened. On your own computer use ws://localhost:7171 (`npm start`). Without a server the game stays single-player. Characters and items are still saved in this browser; the server only connects players, so it is not protected against cheating.': 'เล่นออนไลน์: เซิร์ฟเวอร์นี้ให้บริการเกมด้วย ใช้ที่อยู่เดียวกับหน้าเว็บที่คุณเปิดอยู่ (บนคอมพิวเตอร์ของคุณใช้ ws://localhost:7171 ด้วย `npm start`) ถ้าไม่มีเซิร์ฟเวอร์จะเล่นคนเดียว ตัวละครและไอเทมยังเก็บในเบราว์เซอร์นี้ เซิร์ฟเวอร์แค่เชื่อมผู้เล่น จึงไม่ได้ป้องกันการโกง',
   'Server': 'เซิร์ฟเวอร์',
   'Log in': 'เข้าสู่ระบบ',
   'Create account': 'สร้างบัญชี',

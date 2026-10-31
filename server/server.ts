@@ -9,7 +9,9 @@
 import { WebSocketServer, type WebSocket } from 'ws';
 import { randomBytes, scryptSync, timingSafeEqual } from 'node:crypto';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
-import { join } from 'node:path';
+import { readFile } from 'node:fs/promises';
+import { createServer, type IncomingMessage, type ServerResponse } from 'node:http';
+import { extname, join, resolve, sep } from 'node:path';
 import type { AddressInfo } from 'node:net';
 import {
   CASTLE_MAP, EMPERIUM_POS, MARKET_MAX_LISTINGS, PARTY_LEVEL_GAP, PVP_MAPS,
@@ -18,6 +20,10 @@ import {
 
 export interface ServerOptions {
   port?: number;
+  /** Interface to listen on. Default: all interfaces (needed on a hosting platform). */
+  host?: string;
+  /** Built game (`npm run build` output). When set, the same port serves the web game. */
+  staticDir?: string;
   dataDir?: string;
   /** Guild war always open (tests / events). Otherwise daily 20:00–21:00 server time. */
   woeAlways?: boolean;
@@ -39,6 +45,34 @@ interface Session {
 
 const NAME_RE = /^[A-Za-z0-9_]{3,16}$/;
 const send = (s: Session, m: ServerMsg) => { if (s.ws.readyState === s.ws.OPEN) s.ws.send(JSON.stringify(m)); };
+
+const MIME: Record<string, string> = {
+  '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8',
+  '.json': 'application/json; charset=utf-8', '.webmanifest': 'application/manifest+json', '.txt': 'text/plain; charset=utf-8',
+  '.png': 'image/png', '.webp': 'image/webp', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.gif': 'image/gif', '.svg': 'image/svg+xml',
+  '.ico': 'image/x-icon', '.mp3': 'audio/mpeg', '.ogg': 'audio/ogg', '.wav': 'audio/wav', '.woff2': 'font/woff2', '.woff': 'font/woff', '.ttf': 'font/ttf',
+};
+
+/** Serves files from `root`. Paths outside it are refused; unknown paths get 404 (the game has no client-side routes). */
+function staticHandler(root: string) {
+  const base = resolve(root);
+  return async (req: IncomingMessage, res: ServerResponse) => {
+    const rel = decodeURIComponent(new URL(req.url ?? '/', 'http://localhost').pathname);
+    const file = resolve(base, '.' + (rel === '/' ? '/index.html' : rel));
+    if (file !== base && !file.startsWith(base + sep)) { res.writeHead(403).end('Forbidden'); return; }
+    try {
+      const body = await readFile(file);
+      const ext = extname(file);
+      res.writeHead(200, {
+        'content-type': MIME[ext] ?? 'application/octet-stream',
+        'cache-control': ext === '.html' ? 'no-cache' : 'public, max-age=3600',
+      });
+      res.end(req.method === 'HEAD' ? undefined : body);
+    } catch {
+      res.writeHead(404, { 'content-type': 'text/plain; charset=utf-8' }).end('Not found');
+    }
+  };
+}
 
 export function startServer(opts: ServerOptions = {}): Promise<{ port: number; close: () => Promise<void>; state: { woe: WoeState } }> {
   const now = opts.now ?? (() => Date.now());
@@ -428,7 +462,15 @@ export function startServer(opts: ServerOptions = {}): Promise<{ port: number; c
     }
   };
 
-  const wss = new WebSocketServer({ port: opts.port ?? 7171 });
+  // One HTTP server serves the built game (if staticDir is set), a /healthz probe for hosts, and the
+  // WebSocket endpoint (HTTP upgrade on the same port), so a single URL works for players on the web.
+  const files = opts.staticDir ? staticHandler(opts.staticDir) : null;
+  const http = createServer((req, res) => {
+    if (req.url?.split('?')[0] === '/healthz') { res.writeHead(200, { 'content-type': 'text/plain' }).end('ok'); return; }
+    if (files) { void files(req, res); return; }
+    res.writeHead(200, { 'content-type': 'text/plain; charset=utf-8' }).end('Veyloria server. Open the game in a browser, or connect with WebSocket.');
+  });
+  const wss = new WebSocketServer({ server: http });
   wss.on('connection', (ws) => {
     const s: Session = { ws, user: null, info: null, chatTimes: [], partyId: null, trade: null, tradeRequestFrom: new Set(), shop: null, partyInvite: null, guildInvite: null, lastPartyPush: 0 };
     sessions.add(s);
@@ -446,9 +488,17 @@ export function startServer(opts: ServerOptions = {}): Promise<{ port: number; c
       if (g) pushGuild(g);
     });
   });
-  return new Promise((resolve) => wss.on('listening', () => resolve({
-    port: (wss.address() as AddressInfo).port,
-    state: { get woe() { return woeState(); } },
-    close: () => new Promise<void>((r) => { for (const s of sessions) s.ws.terminate(); wss.close(() => r()); }),
-  })));
+  return new Promise((resolve, reject) => {
+    http.once('error', reject);
+    http.listen(opts.port ?? 7171, opts.host, () => resolve({
+      port: (http.address() as AddressInfo).port,
+      state: { get woe() { return woeState(); } },
+      close: () => new Promise<void>((r) => {
+        for (const s of sessions) s.ws.terminate();
+        wss.close();
+        http.close(() => r());
+        http.closeAllConnections();
+      }),
+    }));
+  });
 }

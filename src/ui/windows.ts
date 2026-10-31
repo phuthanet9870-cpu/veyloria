@@ -2,6 +2,7 @@
 // map, settings — plus NPC dialogue, shop, storage, tooltips and menus.
 import type { App } from './app';
 import { keyFromEvent } from './keys';
+import { defaultServerUrl } from '../net/client';
 import { drawPriceChart } from './chart';
 import { computeDerivedStats } from '../core/formulas';
 import { HOUR_MS, nextRestockMs, priceChangePct, priceHistory, shopStock, traderBuyPrice, traderPrice } from '../core/market';
@@ -1100,7 +1101,7 @@ export class WindowManager {
     const btn = (label: string, fn: () => void, id?: string) => h('button', { class: 'btn small', ...(id ? { id } : {}), onclick: () => { fn(); setTimeout(() => this.renderSocial(), 150); } }, label);
     const input = (id: string, value: string, ph: string, type = 'text', width = 140) => h('input', { id, type, value, placeholder: ph, class: 'text-input', style: `width:${width}px` }) as HTMLInputElement;
     if (!on.net.online || !on.joined) {
-      const url = input('net-url', app.settings.serverUrl ?? 'ws://localhost:7171', 'ws://host:7171', 'text', 200);
+      const url = input('net-url', app.settings.serverUrl ?? defaultServerUrl(), 'ws://host:7171', 'text', 200);
       const user = input('net-user', app.settings.serverUser ?? '', 'account');
       const pass = input('net-pass', '', 'password', 'password');
       const go = (register: boolean) => {
@@ -1108,7 +1109,7 @@ export class WindowManager {
         on.connect(url.value.trim(), user.value.trim(), pass.value, register).catch((e) => app.hud?.toast(String((e as Error).message ?? e), true));
       };
       setChildren(body, h('div', { style: 'width:380px' },
-        h('div', { class: 'muted', style: 'font-size:11px' }, 'Online play needs a Veyloria server (run `npm run server` on your computer, then use ws://localhost:7171). Without one the game stays single-player. Characters and items stay on your own computer; the server only connects players, so it is not protected against cheating.'),
+        h('div', { class: 'muted', style: 'font-size:11px' }, 'Online play: the server also hosts this game, so use the address of the page you opened. On your own computer use ws://localhost:7171 (`npm start`). Without a server the game stays single-player. Characters and items are still saved in this browser; the server only connects players, so it is not protected against cheating.'),
         h('div', { class: 'row', style: 'gap:6px;margin-top:6px' }, 'Server', url),
         h('div', { class: 'row', style: 'gap:6px;margin-top:4px' }, user, pass),
         h('div', { class: 'row', style: 'gap:6px;margin-top:6px' }, btn('Log in', () => go(false), 'net-login'), btn('Create account', () => go(true), 'net-register')),

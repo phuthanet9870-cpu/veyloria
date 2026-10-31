@@ -17,6 +17,8 @@
     "world:build": "node scripts/run-ts.mjs ./tools/world-gen/build-world.ts",
     "jobs:build": "node scripts/run-ts.mjs ./tools/world-gen/build-jobs.ts",
     "server": "node scripts/run-ts.mjs ./server/main.ts",
+    "start": "npm run build && node scripts/run-ts.mjs ./server/main.ts",
+    "start:only": "node scripts/run-ts.mjs ./server/main.ts",
     "typecheck:server": "tsc --noEmit -p server",
     "test:online": "npm run build && node tests/e2e/online-e2e.mjs",
     "build:portable": "npm run build && node scripts/build-portable.mjs"
